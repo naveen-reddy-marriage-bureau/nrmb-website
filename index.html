@@ -2676,44 +2676,38 @@ checkCookieConsent();
     <button class="su-back" onclick="_suScreen('2')">← Back</button>
     <div class="su-eyebrow">About You</div>
     <div class="su-sugar" id="suSugar3">Keep going, looking great!</div>
-    <div class="su-heading">Let's know you better</div>
+    <div class="su-heading">When were you born?</div>
     <div class="su-body">
       <div id="s_dob_picker" style="display:none;"></div>
-      <div class="su-ff"><label class="su-flbl">Date of Birth *</label><input id="s_dob" class="su-inp" type="date" oninput="_dobAgeHint(this.value)" max=""></div>
-      <small id="dobAgeHint" style="font-family:'EB Garamond',serif;font-size:0.78rem;font-style:italic;color:rgba(184,137,42,0.6);display:block;margin:-0.9rem 0 1.1rem;">Min age: 21 for Male, 18 for Female</small>
-      <div class="su-g2">
-        <div class="su-ff"><label class="su-flbl">Height *</label><select id="s_ht" class="su-sel"><option value="">Select</option><option>4'0" (121cm)</option><option>4'6" (137cm)</option><option>4'8" (142cm)</option><option>4'10" (147cm)</option><option>5'0" (152cm)</option><option>5'1" (155cm)</option><option>5'2" (157cm)</option><option>5'3" (160cm)</option><option>5'4" (163cm)</option><option>5'5" (165cm)</option><option>5'6" (168cm)</option><option>5'7" (170cm)</option><option>5'8" (173cm)</option><option>5'9" (175cm)</option><option>5'10" (178cm)</option><option>5'11" (180cm)</option><option>6'0" (183cm)</option><option>6'1" (185cm)</option><option>6'2" (188cm)</option><option>6'3" (191cm)</option><option>6'4" (193cm)</option><option>6'6" (198cm)</option><option>6'9" (206cm)</option><option>7'0" (213cm)</option></select></div>
-        <div class="su-ff"><label class="su-flbl">Mother Tongue *</label><select id="s_mt" class="su-sel"><option value="">Select</option><option>Telugu</option><option>Kannada</option><option>Tamil</option><option>Hindi</option><option>Marathi</option><option>Gujarati</option><option>Bengali</option><option>Malayalam</option><option>Odia</option><option>Punjabi</option><option>Other</option></select></div>
-        <div class="su-ff"><label class="su-flbl">Complexion</label><select id="s_cx" class="su-sel"><option value="">Select</option><option>Very Fair</option><option>Fair</option><option>Wheatish</option><option>Wheatish Brown</option><option>Dark</option></select></div>
-        <div class="su-ff"><label class="su-flbl">Body Type</label><select id="s_bt" class="su-sel"><option value="">Select</option><option>Slim</option><option>Athletic</option><option>Average</option><option>Heavy</option></select></div>
-        <div class="su-ff"><label class="su-flbl">Blood Group</label><select id="s_bg" class="su-sel"><option value="">Select</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>O+</option><option>O-</option><option>AB+</option><option>AB-</option></select></div>
-        <div class="su-ff"><label class="su-flbl">Differently Abled</label><select id="s_da" class="su-sel"><option>No</option><option>Yes</option></select></div>
+      <div class="su-ff" style="max-width:280px;margin:0 auto;">
+        <label class="su-flbl" style="text-align:center;display:block;">Date of Birth</label>
+        <input id="s_dob" class="su-inp" type="date" oninput="_dobAgeHint(this.value)" max="" style="text-align:center;font-size:1.1rem;letter-spacing:0.05em;">
       </div>
-      <button class="su-continue" onclick="_suScreen('4')">Continue →</button>
+      <small id="dobAgeHint" style="font-family:'EB Garamond',serif;font-size:0.78rem;font-style:italic;color:rgba(184,137,42,0.6);display:block;margin-top:0.5rem;text-align:center;">Min age: 21 for Male, 18 for Female</small>
+      <select id="s_cx" style="display:none;"><option value=""></option><option>Very Fair</option><option>Fair</option><option>Wheatish</option><option>Wheatish Brown</option><option>Dark</option></select>
+      <select id="s_bt" style="display:none;"><option value=""></option><option>Slim</option><option>Athletic</option><option>Average</option><option>Heavy</option></select>
+      <select id="s_bg" style="display:none;"><option value=""></option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>O+</option><option>O-</option><option>AB+</option><option>AB-</option></select>
+      <select id="s_da" style="display:none;"><option>No</option><option>Yes</option></select>
+      <button class="su-continue" onclick="_suScreen('4')" style="margin-top:2.5rem;">Continue →</button>
     </div>
     <div class="su-footer">Already registered? <a onclick="showPage('pgLogin')">Sign In →</a></div>
   </div>
 
-  <!-- suS4: Astrology -->
+  <!-- suS4: Height & Mother Tongue -->
   <div class="su-screen" id="suS4">
     <button class="su-back" onclick="_suScreen('3')">← Back</button>
-    <div class="su-eyebrow">Astrology</div>
+    <div class="su-eyebrow">About You</div>
     <div class="su-sugar" id="suSugar4">Halfway there!</div>
-    <div class="su-heading">For your Kundali matching</div>
-    <div class="su-subhead">Optional but helps find a compatible match</div>
+    <div class="su-heading">Your height &amp; language</div>
     <div class="su-body">
-      <div class="su-ff">
-        <label class="su-flbl">Time of Birth <span style="font-size:0.7em;opacity:0.6;">(optional)</span></label>
-        <div style="display:flex;gap:0.6rem;align-items:center;">
-          <select id="s_tob_h" onchange="_syncTOB()" class="su-sel" style="flex:1;"><option value="">HH</option><option>01</option><option>02</option><option>03</option><option>04</option><option>05</option><option>06</option><option>07</option><option>08</option><option>09</option><option>10</option><option>11</option><option>12</option></select>
-          <span style="color:rgba(184,137,42,0.5);font-size:1.2rem;">:</span>
-          <select id="s_tob_m" onchange="_syncTOB()" class="su-sel" style="flex:1;"><option value="">MM</option><option>00</option><option>05</option><option>10</option><option>15</option><option>20</option><option>25</option><option>30</option><option>35</option><option>40</option><option>45</option><option>50</option><option>55</option></select>
-          <select id="s_tob_ap" onchange="_syncTOB()" class="su-sel" style="flex:1.2;"><option value="">AM/PM</option><option>AM</option><option>PM</option></select>
-        </div>
-        <input id="s_tob" type="hidden">
-      </div>
-      <div class="su-ff"><label class="su-flbl">Place of Birth <span style="font-size:0.7em;opacity:0.6;">(optional)</span></label><input id="s_pob" class="su-inp" type="text" placeholder="e.g. Hyderabad"></div>
-      <button class="su-continue" onclick="_suScreen('5')">Continue →</button>
+      <div class="su-ff"><label class="su-flbl">Height</label><select id="s_ht" class="su-sel"><option value="">Select your height</option><option>4'8" (142cm)</option><option>4'10" (147cm)</option><option>5'0" (152cm)</option><option>5'1" (155cm)</option><option>5'2" (157cm)</option><option>5'3" (160cm)</option><option>5'4" (163cm)</option><option>5'5" (165cm)</option><option>5'6" (168cm)</option><option>5'7" (170cm)</option><option>5'8" (173cm)</option><option>5'9" (175cm)</option><option>5'10" (178cm)</option><option>5'11" (180cm)</option><option>6'0" (183cm)</option><option>6'1" (185cm)</option><option>6'2" (188cm)</option><option>6'3" (191cm)</option><option>6'4" (193cm)</option></select></div>
+      <div class="su-ff" style="margin-top:1.8rem;"><label class="su-flbl">Mother Tongue</label><select id="s_mt" class="su-sel"><option value="">Select language</option><option>Telugu</option><option>Kannada</option><option>Tamil</option><option>Hindi</option><option>Marathi</option><option>Gujarati</option><option>Bengali</option><option>Malayalam</option><option>Odia</option><option>Punjabi</option><option>Other</option></select></div>
+      <input id="s_tob" type="hidden">
+      <input id="s_pob" type="hidden">
+      <select id="s_tob_h" style="display:none;"><option value=""></option></select>
+      <select id="s_tob_m" style="display:none;"><option value=""></option></select>
+      <select id="s_tob_ap" style="display:none;"><option value=""></option></select>
+      <button class="su-continue" onclick="_suScreen('5')" style="margin-top:2.5rem;">Continue →</button>
     </div>
     <div class="su-footer">Already registered? <a onclick="showPage('pgLogin')">Sign In →</a></div>
   </div>
@@ -2721,16 +2715,16 @@ checkCookieConsent();
   <!-- suS5: Location -->
   <div class="su-screen" id="suS5">
     <button class="su-back" onclick="_suScreen('4')">← Back</button>
-    <div class="su-eyebrow">Where You Are</div>
+    <div class="su-eyebrow">Location</div>
     <div class="su-sugar" id="suSugar5">You're doing amazing!</div>
-    <div class="su-heading">Your location details</div>
+    <div class="su-heading">Where are you from?</div>
     <div class="su-body">
-      <div class="su-ff"><label class="su-flbl">Country *</label><select id="s_country" class="su-sel" data-search="true" data-dynamic="true" onchange="onCountryChange(true)"><option value="">Select Country</option><option>Afghanistan</option><option>Australia</option><option>Bahrain</option><option>Bangladesh</option><option>Canada</option><option>China</option><option>France</option><option>Germany</option><option>India</option><option>Indonesia</option><option>Japan</option><option>Kuwait</option><option>Malaysia</option><option>New Zealand</option><option>Oman</option><option>Pakistan</option><option>Qatar</option><option>Russia</option><option>Saudi Arabia</option><option>Singapore</option><option>South Africa</option><option>South Korea</option><option>Sri Lanka</option><option>Sweden</option><option>Switzerland</option><option>Taiwan</option><option>Thailand</option><option>Turkey</option><option>United Arab Emirates</option><option>United Kingdom</option><option>United States</option><option>Other</option></select></div>
-      <div class="su-ff" id="s_state_wrap"><label class="su-flbl">State / Province</label><select id="s_state" class="su-sel" data-search="true" data-dynamic="true" onchange="onStateChange()"><option value="">Select State</option></select></div>
-      <div class="su-ff"><label class="su-flbl">City *</label><input id="s_city" class="su-inp" type="text" placeholder="e.g. Hyderabad" oninput="_clearFieldErr('s_city')"></div>
-      <div class="su-ff"><label class="su-flbl">Native Place / District *</label><input id="s_native" class="su-inp" type="text" placeholder="e.g. Nalgonda, Warangal"></div>
-      <div class="su-ff"><label class="su-flbl">Residential Status</label><select id="s_res" class="su-sel"><option>Permanent Resident</option><option>NRI</option><option>Student Abroad</option><option>Work Visa</option></select></div>
-      <button class="su-continue" onclick="_suScreen('6')">Continue →</button>
+      <div class="su-ff"><label class="su-flbl">City</label><input id="s_city" class="su-inp" type="text" placeholder="e.g. Hyderabad" oninput="_clearFieldErr('s_city')"></div>
+      <div class="su-ff" style="margin-top:1.8rem;"><label class="su-flbl">Native Place / District</label><input id="s_native" class="su-inp" type="text" placeholder="e.g. Nalgonda, Warangal"></div>
+      <select id="s_country" style="display:none;" onchange="onCountryChange(true)"><option value="">India</option><option selected>India</option><option>United States</option><option>United Kingdom</option><option>Canada</option><option>Australia</option><option>UAE</option><option>Singapore</option><option>Germany</option><option>Other</option></select>
+      <div id="s_state_wrap" style="display:none;"><select id="s_state" onchange="onStateChange()"><option value=""></option></select></div>
+      <select id="s_res" style="display:none;"><option>Permanent Resident</option><option>NRI</option><option>Student Abroad</option><option>Work Visa</option></select>
+      <button class="su-continue" onclick="_suScreen('6')" style="margin-top:2.5rem;">Continue →</button>
     </div>
     <div class="su-footer">Already registered? <a onclick="showPage('pgLogin')">Sign In →</a></div>
   </div>
@@ -2740,16 +2734,15 @@ checkCookieConsent();
     <button class="su-back" onclick="_suScreen('5')">← Back</button>
     <div class="su-eyebrow">Your Roots</div>
     <div class="su-sugar" id="suSugar6">Your profile is taking shape!</div>
-    <div class="su-heading">Community &amp; Gotram</div>
+    <div class="su-heading">Gotram &amp; star sign</div>
     <div class="su-subhead">Hindu · Reddy Community only</div>
     <div class="su-body">
-      <div class="su-g2">
-        <div class="su-ff"><label class="su-flbl">Sub-Caste / Gotra *</label><input id="s_gotra" class="su-inp" list="gotraList" placeholder="Type or select…"><datalist id="gotraList"><option>Motati</option><option>Gudati</option><option>Pakanati</option><option>Gone</option><option>Chittepu</option><option>Bhumanchi</option><option>Pedakanti</option><option>Velama</option><option>Gajula</option><option>Konukanula</option><option>Cherukunutla</option><option>Chegolla</option><option>Other</option></datalist></div>
-        <div class="su-ff"><label class="su-flbl">Father's Gotra</label><input id="s_fg" class="su-inp" list="fGotraList" placeholder="Type gotra…"><datalist id="fGotraList"><option>Motati</option><option>Gudati</option><option>Pakanati</option><option>Gone</option><option>Chittepu</option><option>Bhumanchi</option><option>Pedakanti</option><option>Konukanula</option><option>Cherukunutla</option><option>Chegolla</option><option>Other</option></datalist></div>
-        <div class="su-ff"><label class="su-flbl">Nakshatra *</label><select id="s_nak" class="su-sel"><option value="">Select</option><option>Ashwini</option><option>Bharani</option><option>Krittika</option><option>Rohini</option><option>Mrigashira</option><option>Ardra</option><option>Punarvasu</option><option>Pushya</option><option>Ashlesha</option><option>Magha</option><option>Purva Phalguni</option><option>Uttara Phalguni</option><option>Hasta</option><option>Chitra</option><option>Swati</option><option>Vishakha</option><option>Anuradha</option><option>Jyeshtha</option><option>Mula</option><option>Purva Ashadha</option><option>Uttara Ashadha</option><option>Shravana</option><option>Dhanishtha</option><option>Shatabhisha</option><option>Purva Bhadrapada</option><option>Uttara Bhadrapada</option><option>Revati</option></select></div>
-        <div class="su-ff"><label class="su-flbl">Rashi (Moon Sign) *</label><select id="s_rashi" class="su-sel" onchange="this.dataset.userEdited='1'"><option value="">Select</option><option>Mesha (Aries)</option><option>Vrishabha (Taurus)</option><option>Mithuna (Gemini)</option><option>Karka (Cancer)</option><option>Simha (Leo)</option><option>Kanya (Virgo)</option><option>Tula (Libra)</option><option>Vrishchika (Scorpio)</option><option>Dhanu (Sagittarius)</option><option>Makara (Capricorn)</option><option>Kumbha (Aquarius)</option><option>Meena (Pisces)</option></select></div>
-      </div>
-      <button class="su-continue" onclick="_suScreen('7')">Continue →</button>
+      <div class="su-ff"><label class="su-flbl">Sub-Caste / Gotra</label><input id="s_gotra" class="su-inp" list="gotraList" placeholder="Type or select your Gotra…"><datalist id="gotraList"><option>Motati</option><option>Gudati</option><option>Pakanati</option><option>Gone</option><option>Chittepu</option><option>Bhumanchi</option><option>Pedakanti</option><option>Velama</option><option>Gajula</option><option>Konukanula</option><option>Cherukunutla</option><option>Chegolla</option><option>Other</option></datalist></div>
+      <div class="su-ff" style="margin-top:1.5rem;"><label class="su-flbl">Nakshatra</label><select id="s_nak" class="su-sel"><option value="">Select Nakshatra</option><option>Ashwini</option><option>Bharani</option><option>Krittika</option><option>Rohini</option><option>Mrigashira</option><option>Ardra</option><option>Punarvasu</option><option>Pushya</option><option>Ashlesha</option><option>Magha</option><option>Purva Phalguni</option><option>Uttara Phalguni</option><option>Hasta</option><option>Chitra</option><option>Swati</option><option>Vishakha</option><option>Anuradha</option><option>Jyeshtha</option><option>Mula</option><option>Purva Ashadha</option><option>Uttara Ashadha</option><option>Shravana</option><option>Dhanishtha</option><option>Shatabhisha</option><option>Purva Bhadrapada</option><option>Uttara Bhadrapada</option><option>Revati</option></select></div>
+      <div class="su-ff" style="margin-top:1.5rem;"><label class="su-flbl">Rashi (Moon Sign)</label><select id="s_rashi" class="su-sel" onchange="this.dataset.userEdited='1'"><option value="">Select Rashi</option><option>Mesha (Aries)</option><option>Vrishabha (Taurus)</option><option>Mithuna (Gemini)</option><option>Karka (Cancer)</option><option>Simha (Leo)</option><option>Kanya (Virgo)</option><option>Tula (Libra)</option><option>Vrishchika (Scorpio)</option><option>Dhanu (Sagittarius)</option><option>Makara (Capricorn)</option><option>Kumbha (Aquarius)</option><option>Meena (Pisces)</option></select></div>
+      <input id="s_fg" type="hidden" value="">
+      <datalist id="fGotraList"><option>Motati</option><option>Other</option></datalist>
+      <button class="su-continue" onclick="_suScreen('7')" style="margin-top:2.5rem;">Continue →</button>
     </div>
     <div class="su-footer">Already registered? <a onclick="showPage('pgLogin')">Sign In →</a></div>
   </div>
@@ -2759,17 +2752,16 @@ checkCookieConsent();
     <button class="su-back" onclick="_suScreen('6')">← Back</button>
     <div class="su-eyebrow">Education</div>
     <div class="su-sugar" id="suSugar7">Excellent progress!</div>
-    <div class="su-heading">Your educational journey</div>
+    <div class="su-heading">What's your qualification?</div>
     <div class="su-body">
-      <div class="su-g2">
-        <div class="su-ff"><label class="su-flbl">Schooling Board *</label><select id="s_board" class="su-sel" onchange="onBoardChange()"><option value="">Select Board</option><option>SSC</option><option>CBSE</option><option>ICSE</option><option>State Board</option><option>Other</option></select></div>
-        <div class="su-ff"><label class="su-flbl" id="s_school_lbl">School Name</label><input id="s_school" class="su-inp" type="text" placeholder="e.g. Delhi Public School"></div>
-        <div class="su-ff"><label class="su-flbl">Intermediate / 12th College</label><input id="s_inter" class="su-inp" type="text" placeholder="e.g. Sri Chaitanya Junior"></div>
-        <div class="su-ff"><label class="su-flbl">Highest Qualification *</label><select id="s_edu" class="su-sel" onchange="onEduChange()"><option value="">Select</option><option>10th / SSC</option><option>Intermediate / 12th</option><option>Diploma</option><option>B.Tech / B.E.</option><option>B.Sc / B.Com / B.A.</option><option>MBBS</option><option>LLB</option><option>CA / CMA / CS</option><option>M.Tech / M.E.</option><option>M.Sc / M.Com / M.A.</option><option>M.B.A.</option><option>MD / MS</option><option>MS (USA/UK)</option><option>LLM</option><option>Ph.D.</option><option>Other</option></select></div>
-        <div class="su-ff" id="s_engcol_wrap"><label class="su-flbl">Degree / Engineering College</label><input id="s_engcol" class="su-inp" type="text" placeholder="e.g. Osmania University"></div>
-        <div class="su-ff" id="s_pgcol_wrap"><label class="su-flbl">PG / Higher Education College</label><input id="s_col" class="su-inp" type="text" placeholder="e.g. IIT Bombay"></div>
-      </div>
-      <button class="su-continue" onclick="_suScreen('8')">Continue →</button>
+      <div class="su-ff"><label class="su-flbl">Highest Qualification</label><select id="s_edu" class="su-sel" onchange="onEduChange()"><option value="">Select qualification</option><option>10th / SSC</option><option>Intermediate / 12th</option><option>Diploma</option><option>B.Tech / B.E.</option><option>B.Sc / B.Com / B.A.</option><option>MBBS</option><option>LLB</option><option>CA / CMA / CS</option><option>M.Tech / M.E.</option><option>M.Sc / M.Com / M.A.</option><option>M.B.A.</option><option>MD / MS</option><option>MS (USA/UK)</option><option>LLM</option><option>Ph.D.</option><option>Other</option></select></div>
+      <div class="su-ff" id="s_engcol_wrap" style="margin-top:1.8rem;"><label class="su-flbl">College / University</label><input id="s_engcol" class="su-inp" type="text" placeholder="e.g. Osmania University, IIT Bombay"></div>
+      <select id="s_board" style="display:none;" onchange="onBoardChange()"><option value="">SSC</option><option>SSC</option><option>CBSE</option><option>ICSE</option><option>State Board</option><option>Other</option></select>
+      <label id="s_school_lbl" style="display:none;"></label>
+      <input id="s_school" type="hidden" value="">
+      <input id="s_inter" type="hidden" value="">
+      <div id="s_pgcol_wrap" style="display:none;"><input id="s_col" type="hidden" value=""></div>
+      <button class="su-continue" onclick="_suScreen('8')" style="margin-top:2.5rem;">Continue →</button>
     </div>
     <div class="su-footer">Already registered? <a onclick="showPage('pgLogin')">Sign In →</a></div>
   </div>
@@ -2779,19 +2771,17 @@ checkCookieConsent();
     <button class="su-back" onclick="_suScreen('7')">← Back</button>
     <div class="su-eyebrow">Career</div>
     <div class="su-sugar" id="suSugar8">Almost through the details!</div>
-    <div class="su-heading">Your professional life</div>
+    <div class="su-heading">What do you do?</div>
     <div class="su-body">
-      <div class="su-g2">
-        <div class="su-ff"><label class="su-flbl">Employed In *</label><select id="s_emp" class="su-sel"><option value="">Select</option><option>Government / PSU</option><option>Private Sector</option><option>Business / Self-Employed</option><option>Defence</option><option>Civil Services</option><option>IT / Software</option><option>Teaching / Professor</option><option>Agriculture</option><option>Not Working</option><option>Other</option></select></div>
-        <div class="su-ff"><label class="su-flbl">Occupation *</label><input id="s_occ" class="su-inp" type="text" placeholder="e.g. Software Engineer"></div>
-        <div class="su-ff" style="grid-column:1/-1;"><label class="su-flbl">Company / Organisation</label><input id="s_co" class="su-inp" type="text" placeholder="e.g. TCS, HCL, Govt of TS"></div>
-        <div class="su-ff" style="grid-column:1/-1;"><label class="su-flbl">Work Country</label><select id="s_wcountry" class="su-sel" data-search="true" onchange="onWorkCountryChange()"><option value="">Select Country</option><option>India</option><option>United States</option><option>United Kingdom</option><option>Canada</option><option>Australia</option><option>UAE</option><option>Singapore</option><option>Germany</option><option>Other</option></select></div>
-        <div class="su-ff" id="s_wstate_wrap"><label class="su-flbl">Work State</label><select id="s_wstate" class="su-sel" data-search="true" data-dynamic="true" onchange="onWorkStateChange()"><option value="">Select State</option></select></div>
-        <div class="su-ff"><label class="su-flbl">Work City</label><input id="s_wcity" class="su-inp" type="text" placeholder="e.g. Hyderabad"></div>
-        <div class="su-ff" style="grid-column:1/-1;"><label class="su-flbl">Annual Income * (₹)</label><input id="s_inc" class="su-inp" type="number" min="0" placeholder="e.g. 600000" oninput="formatIncome(this)"><div id="incDisplay" style="font-family:'Cormorant Garamond',serif;font-size:0.9rem;font-style:italic;color:rgba(184,137,42,0.7);margin-top:0.2rem;"></div></div>
-        <div class="su-ff" id="s_visa_wrap" style="display:none;"><label class="su-flbl">Visa Status</label><input id="s_visa" class="su-inp" type="text" placeholder="e.g. H1B, PR, Citizen"></div>
-      </div>
-      <button class="su-continue" onclick="_suScreen('9')">Continue →</button>
+      <div class="su-ff"><label class="su-flbl">Employed In</label><select id="s_emp" class="su-sel"><option value="">Select sector</option><option>Government / PSU</option><option>Private Sector</option><option>Business / Self-Employed</option><option>Defence</option><option>Civil Services</option><option>IT / Software</option><option>Teaching / Professor</option><option>Agriculture</option><option>Not Working</option><option>Other</option></select></div>
+      <div class="su-ff" style="margin-top:1.5rem;"><label class="su-flbl">Occupation</label><input id="s_occ" class="su-inp" type="text" placeholder="e.g. Software Engineer, Doctor"></div>
+      <div class="su-ff" style="margin-top:1.5rem;"><label class="su-flbl">Annual Income (₹)</label><input id="s_inc" class="su-inp" type="number" min="0" placeholder="e.g. 600000" oninput="formatIncome(this)"><div id="incDisplay" style="font-family:'Cormorant Garamond',serif;font-size:0.85rem;font-style:italic;color:rgba(184,137,42,0.7);margin-top:0.2rem;"></div></div>
+      <input id="s_co" type="hidden" value="">
+      <select id="s_wcountry" style="display:none;" onchange="onWorkCountryChange()"><option value="">India</option><option selected>India</option><option>United States</option><option>Other</option></select>
+      <div id="s_wstate_wrap" style="display:none;"><select id="s_wstate" onchange="onWorkStateChange()"><option value=""></option></select></div>
+      <input id="s_wcity" type="hidden" value="">
+      <div id="s_visa_wrap" style="display:none;"><input id="s_visa" type="hidden" value=""></div>
+      <button class="su-continue" onclick="_suScreen('9')" style="margin-top:2.5rem;">Continue →</button>
     </div>
     <div class="su-footer">Already registered? <a onclick="showPage('pgLogin')">Sign In →</a></div>
   </div>
@@ -2799,13 +2789,12 @@ checkCookieConsent();
   <!-- suS9: Lifestyle -->
   <div class="su-screen" id="suS9">
     <button class="su-back" onclick="_suScreen('8')">← Back</button>
-    <div class="su-eyebrow">Your Lifestyle</div>
+    <div class="su-eyebrow">Lifestyle</div>
     <div class="su-sugar" id="suSugar9">Just a few more steps!</div>
-    <div class="su-heading">How do you live?</div>
+    <div class="su-heading">Your food preference?</div>
     <div class="su-body">
       <div class="su-ff">
-        <label class="su-flbl">Diet *</label>
-        <div class="su-pills">
+        <div class="su-pills" style="justify-content:center;gap:0.8rem;">
           <div class="su-pill" data-group="s_diet" data-val="Vegetarian" onclick="suPill('s_diet','Vegetarian',this)">Vegetarian</div>
           <div class="su-pill" data-group="s_diet" data-val="Non-Vegetarian" onclick="suPill('s_diet','Non-Vegetarian',this)">Non-Vegetarian</div>
           <div class="su-pill" data-group="s_diet" data-val="Eggetarian" onclick="suPill('s_diet','Eggetarian',this)">Eggetarian</div>
@@ -2813,30 +2802,14 @@ checkCookieConsent();
         </div>
         <select id="s_diet" class="su-sel" style="display:none;"><option value="">Select</option><option>Vegetarian</option><option>Non-Vegetarian</option><option>Eggetarian</option><option>Vegan</option></select>
       </div>
-      <div class="su-ff">
-        <label class="su-flbl">Smoking</label>
-        <div class="su-pills">
-          <div class="su-pill" data-group="s_smk" data-val="Never" onclick="suPill('s_smk','Never',this)">Never</div>
-          <div class="su-pill" data-group="s_smk" data-val="Occasionally" onclick="suPill('s_smk','Occasionally',this)">Occasionally</div>
-          <div class="su-pill" data-group="s_smk" data-val="Regularly" onclick="suPill('s_smk','Regularly',this)">Regularly</div>
-        </div>
-        <select id="s_smk" style="display:none;"><option>Never</option><option>Occasionally</option><option>Regularly</option></select>
-      </div>
-      <div class="su-ff">
-        <label class="su-flbl">Drinking</label>
-        <div class="su-pills">
-          <div class="su-pill" data-group="s_drk" data-val="Never" onclick="suPill('s_drk','Never',this)">Never</div>
-          <div class="su-pill" data-group="s_drk" data-val="Occasionally" onclick="suPill('s_drk','Occasionally',this)">Occasionally</div>
-          <div class="su-pill" data-group="s_drk" data-val="Regularly" onclick="suPill('s_drk','Regularly',this)">Regularly</div>
-        </div>
-        <select id="s_drk" style="display:none;"><option>Never</option><option>Occasionally</option><option>Regularly</option></select>
-      </div>
-      <div class="su-ff">
-        <label class="su-flbl">About Yourself</label>
-        <textarea id="s_about" class="su-ta" placeholder="Describe yourself, your interests, hobbies, values and what you seek in a life partner…" rows="4" oninput="this.nextElementSibling.textContent=this.value.length+'/400 characters'"></textarea>
+      <div class="su-ff" style="margin-top:2rem;">
+        <label class="su-flbl" style="text-align:center;display:block;">About Yourself</label>
+        <textarea id="s_about" class="su-ta" placeholder="Your interests, hobbies, values…" rows="4" oninput="this.nextElementSibling.textContent=this.value.length+'/400 characters'"></textarea>
         <div class="su-char-count">0/400 characters</div>
       </div>
-      <button class="su-continue" onclick="_suScreen('10')">Continue →</button>
+      <select id="s_smk" style="display:none;"><option selected>Never</option><option>Occasionally</option><option>Regularly</option></select>
+      <select id="s_drk" style="display:none;"><option selected>Never</option><option>Occasionally</option><option>Regularly</option></select>
+      <button class="su-continue" onclick="_suScreen('10')" style="margin-top:2rem;">Continue →</button>
     </div>
     <div class="su-footer">Already registered? <a onclick="showPage('pgLogin')">Sign In →</a></div>
   </div>
@@ -2844,29 +2817,27 @@ checkCookieConsent();
   <!-- suS10: Family -->
   <div class="su-screen" id="suS10">
     <button class="su-back" onclick="_suScreen('9')">← Back</button>
-    <div class="su-eyebrow">Your Family</div>
+    <div class="su-eyebrow">Family</div>
     <div class="su-sugar" id="suSugar10">Nearly there!</div>
-    <div class="su-heading">Tell us about your family</div>
+    <div class="su-heading">Your parents' names</div>
     <div class="su-body">
-      <div class="su-g2">
-        <div class="su-ff"><label class="su-flbl">Family Type</label><select id="s_ft" class="su-sel"><option>Nuclear Family</option><option>Joint Family</option></select></div>
-        <div class="su-ff"><label class="su-flbl">Family Values</label><select id="s_fv" class="su-sel"><option>Orthodox</option><option>Traditional</option><option>Moderate</option><option>Liberal</option></select></div>
-        <div class="su-ff" style="grid-column:1/-1;"><label class="su-flbl">Family Status</label><select id="s_fst" class="su-sel" onchange="showTierRecommendation(this.value)"><option value="">Select</option><option>Middle Class</option><option>Upper Middle Class</option><option>Rich / Affluent</option><option>Wealthy</option></select></div>
-        <div class="su-ff"><label class="su-flbl">Father's Name</label><input id="s_fn" class="su-inp" type="text" placeholder="Father's full name"></div>
-        <div class="su-ff"><label class="su-flbl">Father's Status</label><select id="s_fas" class="su-sel" onchange="toggleFatherOcc()"><option value="">Select</option><option>Employed</option><option>Business</option><option>Retired</option><option>Farmer</option><option>Passed Away</option></select></div>
-        <div class="su-ff" id="s_fo_wrap"><label class="su-flbl">Father's Occupation</label><input id="s_fo" class="su-inp" type="text" placeholder="e.g. Govt Officer"></div>
-        <div class="su-ff"><label class="su-flbl">Mother's Name</label><input id="s_mn" class="su-inp" type="text" placeholder="Mother's full name"></div>
-        <div class="su-ff"><label class="su-flbl">Mother's Status</label><select id="s_mas" class="su-sel" onchange="toggleMotherOcc()"><option value="">Select</option><option>Homemaker</option><option>Employed</option><option>Business</option><option>Retired</option><option>Passed Away</option></select></div>
-        <div class="su-ff" id="s_mo_wrap"><label class="su-flbl">Mother's Occupation</label><input id="s_mo" class="su-inp" type="text" placeholder="e.g. Teacher"></div>
-        <div class="su-ff"><label class="su-flbl">Parent Mobile 1</label><input id="s_pgmob1" class="su-inp" type="tel" placeholder="+91 98765 43210"></div>
-        <div class="su-ff"><label class="su-flbl">Parent Mobile 2 <span style="opacity:0.5;font-size:0.9em;">(opt)</span></label><input id="s_pgmob2" class="su-inp" type="tel" placeholder="+91 98765 43210"></div>
-        <div class="su-ff"><label class="su-flbl">Brothers</label><select id="s_br" class="su-sel"><option>0</option><option>1</option><option>2</option><option>3</option><option>4+</option></select></div>
-        <div class="su-ff"><label class="su-flbl">Brothers Married</label><select id="s_brm" class="su-sel"><option>0</option><option>1</option><option>2</option><option>3</option><option>4+</option></select></div>
-        <div class="su-ff"><label class="su-flbl">Sisters</label><select id="s_sr" class="su-sel"><option>0</option><option>1</option><option>2</option><option>3</option><option>4+</option></select></div>
-        <div class="su-ff"><label class="su-flbl">Sisters Married</label><select id="s_srm" class="su-sel"><option>0</option><option>1</option><option>2</option><option>3</option><option>4+</option></select></div>
-        <div class="su-ff" style="grid-column:1/-1;"><label class="su-flbl">Total Property Value <span style="opacity:0.5;font-size:0.9em;">(optional)</span></label><input id="s_pval" class="su-inp" type="text" placeholder="e.g. 2 Crores, Agricultural land"></div>
-      </div>
-      <button class="su-continue" onclick="_suScreen('11')">Continue →</button>
+      <div class="su-ff"><label class="su-flbl">Father's Name</label><input id="s_fn" class="su-inp" type="text" placeholder="Father's full name"></div>
+      <div class="su-ff" style="margin-top:1.8rem;"><label class="su-flbl">Mother's Name</label><input id="s_mn" class="su-inp" type="text" placeholder="Mother's full name"></div>
+      <select id="s_ft" style="display:none;"><option selected>Nuclear Family</option><option>Joint Family</option></select>
+      <select id="s_fv" style="display:none;"><option selected>Traditional</option><option>Orthodox</option><option>Moderate</option><option>Liberal</option></select>
+      <select id="s_fst" style="display:none;" onchange="showTierRecommendation(this.value)"><option value=""></option><option>Middle Class</option><option>Upper Middle Class</option><option>Rich / Affluent</option><option>Wealthy</option></select>
+      <select id="s_fas" style="display:none;" onchange="toggleFatherOcc()"><option value=""></option><option>Employed</option><option>Business</option><option>Retired</option><option>Farmer</option><option>Passed Away</option></select>
+      <div id="s_fo_wrap" style="display:none;"><input id="s_fo" type="hidden" value=""></div>
+      <select id="s_mas" style="display:none;" onchange="toggleMotherOcc()"><option value=""></option><option>Homemaker</option><option>Employed</option><option>Business</option><option>Retired</option><option>Passed Away</option></select>
+      <div id="s_mo_wrap" style="display:none;"><input id="s_mo" type="hidden" value=""></div>
+      <input id="s_pgmob1" type="hidden" value="">
+      <input id="s_pgmob2" type="hidden" value="">
+      <select id="s_br" style="display:none;"><option selected>0</option><option>1</option><option>2</option><option>3</option><option>4+</option></select>
+      <select id="s_brm" style="display:none;"><option selected>0</option><option>1</option><option>2</option><option>3</option><option>4+</option></select>
+      <select id="s_sr" style="display:none;"><option selected>0</option><option>1</option><option>2</option><option>3</option><option>4+</option></select>
+      <select id="s_srm" style="display:none;"><option selected>0</option><option>1</option><option>2</option><option>3</option><option>4+</option></select>
+      <input id="s_pval" type="hidden" value="">
+      <button class="su-continue" onclick="_suScreen('11')" style="margin-top:2.5rem;">Continue →</button>
     </div>
     <div class="su-footer">Already registered? <a onclick="showPage('pgLogin')">Sign In →</a></div>
   </div>
@@ -2876,20 +2847,27 @@ checkCookieConsent();
     <button class="su-back" onclick="_suScreen('10')">← Back</button>
     <div class="su-eyebrow">Your Match</div>
     <div class="su-sugar" id="suSugar11">Last few steps — you've got this!</div>
-    <div class="su-heading">What are you looking for?</div>
+    <div class="su-heading">Partner age preference?</div>
     <div class="su-body">
-      <div class="su-g2">
-        <div class="su-ff"><label class="su-flbl">Preferred Age From</label><input id="pp_af" class="su-inp" type="number" min="18" max="70" placeholder="e.g. 22"></div>
-        <div class="su-ff"><label class="su-flbl">Preferred Age To</label><input id="pp_at" class="su-inp" type="number" min="18" max="80" placeholder="e.g. 30"></div>
-        <div class="su-ff"><label class="su-flbl">Min Height</label><select id="pp_hf" class="su-sel"><option value="">Any</option><option>5'0"</option><option>5'2"</option><option>5'4"</option><option>5'5"</option><option>5'6"</option><option>5'7"</option><option>5'8"</option><option>5'9"</option><option>5'10"</option><option>5'11"</option><option>6'0"</option><option>6'2"</option><option>6'4"</option></select></div>
-        <div class="su-ff"><label class="su-flbl">Expected Education</label><select id="pp_edu" class="su-sel"><option value="">Any</option><option>Graduate &amp; Above</option><option>Post Graduate</option><option>Professional Degree</option><option>Doctorate</option></select></div>
-        <div class="su-ff"><label class="su-flbl">Expected Profession</label><input id="pp_occ" class="su-inp" type="text" placeholder="e.g. Doctor, Engineer, Any"></div>
-        <div class="su-ff"><label class="su-flbl">Expected Income</label><select id="pp_inc" class="su-sel"><option value="">Any</option><option>2 L+</option><option>3 L+</option><option>5 L+</option><option>7 L+</option><option>10 L+</option><option>15 L+</option><option>20 L+</option><option>30 L+</option><option>50 L+</option><option>1 Cr+</option></select></div>
-        <div class="su-ff" style="grid-column:1/-1;"><label class="su-flbl">Preferred Location</label><input id="pp_st" class="su-inp" type="text" placeholder="e.g. Hyderabad, London, Any"></div>
-        <div class="su-ff"><label class="su-flbl">NRI Acceptable?</label><select id="pp_nri" class="su-sel"><option>Open to NRI</option><option>Prefer India-based</option><option>No Preference</option></select></div>
+      <div style="display:flex;gap:1.2rem;align-items:flex-end;justify-content:center;">
+        <div class="su-ff" style="flex:1;max-width:140px;">
+          <label class="su-flbl">From</label>
+          <input id="pp_af" class="su-inp" type="number" min="18" max="70" placeholder="e.g. 22" style="text-align:center;">
+        </div>
+        <span style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--muted);padding-bottom:0.6rem;">—</span>
+        <div class="su-ff" style="flex:1;max-width:140px;">
+          <label class="su-flbl">To</label>
+          <input id="pp_at" class="su-inp" type="number" min="18" max="80" placeholder="e.g. 30" style="text-align:center;">
+        </div>
       </div>
-      <div class="su-ff"><label class="su-flbl">Other Expectations</label><textarea id="pp_note" class="su-ta" placeholder="Any specific expectations about partner or family…" rows="3"></textarea></div>
-      <button class="su-continue" onclick="_suScreen('12')">Continue →</button>
+      <select id="pp_hf" style="display:none;"><option value="">Any</option></select>
+      <select id="pp_edu" style="display:none;"><option value="">Any</option></select>
+      <input id="pp_occ" type="hidden" value="">
+      <select id="pp_inc" style="display:none;"><option value="">Any</option></select>
+      <input id="pp_st" type="hidden" value="">
+      <select id="pp_nri" style="display:none;"><option selected>No Preference</option><option>Open to NRI</option><option>Prefer India-based</option></select>
+      <textarea id="pp_note" style="display:none;"></textarea>
+      <button class="su-continue" onclick="_suScreen('12')" style="margin-top:2.5rem;">Continue →</button>
     </div>
     <div class="su-footer">Already registered? <a onclick="showPage('pgLogin')">Sign In →</a></div>
   </div>
@@ -2904,18 +2882,8 @@ checkCookieConsent();
       <div class="su-ff"><label class="su-flbl">Mobile Number *</label><input id="s_mob" class="su-inp" type="tel" placeholder="+91 98765 43210"></div>
       <div class="su-ff"><label class="su-flbl">Username *</label><input id="s_user" class="su-inp" type="text" placeholder="Choose a unique username"></div>
       <div class="su-ff su-pw"><label class="su-flbl">Password *</label><input id="s_pwd" class="su-inp" type="password" placeholder="Minimum 8 characters"><button class="su-pw-eye" onclick="tpwd('s_pwd',this)" type="button">👁</button></div>
-      <div class="su-tc-wrap">
-        <div class="su-tc-scroll">
-          <h4>Terms &amp; Conditions — Naveen Reddy Marriage Bureau</h4>
-          <p><strong>1. Eligibility:</strong> Membership is exclusively for Reddy community members of Hindu religion. Misrepresentation results in immediate termination without refund.</p>
-          <p><strong>2. Membership Fees (Non-Refundable):</strong> VIP – ₹15,000/yr · Elite – ₹1,00,000/yr · VVIP – ₹30,000/yr.</p>
-          <p><strong>3. Mandatory Post-Engagement Fee:</strong> Upon engagement facilitated by NRMB, each individual must pay within 7 days: VIP – ₹1,50,000 · Elite – ₹3,00,000 · VVIP – ₹10,00,000.</p>
-          <p><strong>4. Privacy &amp; Contact Policy:</strong> Contact details will NOT be shared unless both parties express interest AND the bureau administrator approves.</p>
-          <p><strong>5. Profile Viewing Restriction:</strong> A member's profile may be viewed by a maximum of 3 unique accounts at any time.</p>
-          <p><strong>6. Code of Conduct:</strong> Dignity, honesty and respect are mandatory. Misuse leads to termination and possible legal action.</p>
-          <p><strong>7. Governing Law:</strong> Telangana, India. Disputes subject to Hyderabad jurisdiction.</p>
-        </div>
-        <div class="su-tc-row"><input type="checkbox" id="tcAgree"><label for="tcAgree">I agree to all Terms &amp; Conditions. I confirm I belong to the <strong style="color:var(--crimson);">Reddy community, Hindu religion</strong>. I understand the post-engagement payment.</label></div>
+      <div class="su-tc-wrap" style="margin-top:1rem;">
+        <div class="su-tc-row"><input type="checkbox" id="tcAgree"><label for="tcAgree">I agree to the <a href="#" onclick="document.getElementById('tcFullModal').style.display='flex';return false;" style="color:var(--crimson);">Terms &amp; Conditions</a>. I confirm I belong to the <strong style="color:var(--crimson);">Reddy community, Hindu religion</strong>.</label></div>
       </div>
       <button class="su-continue" onclick="_suScreen('13')">Continue →</button>
     </div>
@@ -2994,6 +2962,22 @@ checkCookieConsent();
   <input type="hidden" id="pgbMale_ghost">
   <input type="hidden" id="pgbFemale_ghost">
   <div id="signupHero" style="display:none!important;"></div>
+</div>
+
+<!-- ══ T&C FULL MODAL ══ -->
+<div id="tcFullModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.7);align-items:center;justify-content:center;padding:1rem;" onclick="if(event.target===this)this.style.display='none'">
+  <div style="background:var(--offwhite);max-width:560px;width:100%;max-height:85vh;overflow-y:auto;border-radius:12px;padding:1.8rem;position:relative;">
+    <button onclick="document.getElementById('tcFullModal').style.display='none'" style="position:absolute;top:0.8rem;right:1rem;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--muted);">×</button>
+    <h4 style="font-family:'Cinzel',serif;color:var(--crimson);margin-bottom:1rem;">Terms &amp; Conditions</h4>
+    <p style="font-size:0.9rem;line-height:1.7;color:var(--text);"><strong>1. Eligibility:</strong> Membership is exclusively for Reddy community members of Hindu religion. Misrepresentation results in immediate termination without refund.</p>
+    <p style="font-size:0.9rem;line-height:1.7;color:var(--text);"><strong>2. Membership Fees (Non-Refundable):</strong> VIP – ₹15,000/yr · Elite – ₹1,00,000/yr · VVIP – ₹30,000/yr.</p>
+    <p style="font-size:0.9rem;line-height:1.7;color:var(--text);"><strong>3. Mandatory Post-Engagement Fee:</strong> Upon engagement facilitated by NRMB, each individual must pay within 7 days: VIP – ₹1,50,000 · Elite – ₹3,00,000 · VVIP – ₹10,00,000.</p>
+    <p style="font-size:0.9rem;line-height:1.7;color:var(--text);"><strong>4. Privacy &amp; Contact Policy:</strong> Contact details will NOT be shared unless both parties express interest AND the bureau administrator approves.</p>
+    <p style="font-size:0.9rem;line-height:1.7;color:var(--text);"><strong>5. Profile Viewing Restriction:</strong> A member's profile may be viewed by a maximum of 3 unique accounts at any time.</p>
+    <p style="font-size:0.9rem;line-height:1.7;color:var(--text);"><strong>6. Code of Conduct:</strong> Dignity, honesty and respect are mandatory. Misuse leads to termination and possible legal action.</p>
+    <p style="font-size:0.9rem;line-height:1.7;color:var(--text);"><strong>7. Governing Law:</strong> Telangana, India. Disputes subject to Hyderabad jurisdiction.</p>
+    <button onclick="document.getElementById('tcAgree').checked=true;document.getElementById('tcFullModal').style.display='none'" style="margin-top:1rem;background:var(--crimson);color:#fff;border:none;padding:0.7rem 1.8rem;border-radius:8px;font-family:'Cinzel',serif;font-size:0.85rem;cursor:pointer;width:100%;">I Agree</button>
+  </div>
 </div>
 
 <!-- ══════════════════════════════════════
