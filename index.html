@@ -809,105 +809,175 @@ html:has(#pgHome.active){scroll-behavior:smooth;}
 .chk-row label{font-family:'EB Garamond',serif;font-size:0.82rem;color:var(--muted);line-height:1.7;cursor:pointer;}
 
 /* ═══════════ SIGNUP — IMMERSIVE SCREENS ═══════════ */
-#pgSignup{position:relative!important;height:100dvh;overflow:hidden;
-  background:var(--offwhite)!important;}
+#pgSignup{position:relative!important;height:100dvh;overflow:hidden;background:var(--offwhite)!important;}
 #pgSignup::before{opacity:0.055;}
 .su-screen{display:none;position:absolute;inset:0;flex-direction:column;align-items:center;justify-content:center;
   padding:2rem 1.5rem 5rem;overflow-y:auto;}
-.su-screen.su-active{display:flex;animation:suFadeIn 0.28s ease both;}
-@keyframes suFadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
-.su-eyebrow{display:flex;align-items:center;gap:0.6rem;font-family:'Cinzel',serif;font-size:0.52rem;
-  font-weight:600;letter-spacing:0.22em;color:var(--gold);text-transform:uppercase;margin-bottom:0.5rem;}
-.su-eyebrow::before,.su-eyebrow::after{content:'';display:block;width:36px;height:1px;background:rgba(184,137,42,0.42);}
-.su-sugar{font-family:'EB Garamond',serif;font-size:0.8rem;font-style:italic;color:var(--gold2);
-  text-align:center;margin-bottom:0.6rem;min-height:1em;transition:opacity 0.4s;}
-.su-heading{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,5vw,2.75rem);
-  font-weight:300;font-style:italic;color:var(--crimson);text-align:center;line-height:1.18;
-  margin-bottom:0.3rem;max-width:600px;}
-.su-subhead{font-family:'EB Garamond',serif;font-size:0.82rem;color:var(--muted);
-  text-align:center;margin-bottom:1.5rem;}
-.su-body{width:100%;max-width:540px;}
-.su-flbl{display:block;font-family:'Cinzel',serif;font-size:0.5rem;font-weight:600;
-  letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.42rem;}
-.su-inp{width:100%;background:transparent;border:none;border-bottom:1.5px solid rgba(184,137,42,0.3);
-  color:var(--text);font-family:'EB Garamond',serif;font-size:1.05rem;font-style:italic;
-  padding:0.45rem 0 0.48rem;outline:none;transition:border-color 0.2s;caret-color:var(--gold2);}
-.su-inp::placeholder{color:rgba(107,83,64,0.35);font-style:italic;}
+.su-screen.su-active{display:flex;animation:suFadeIn 0.3s cubic-bezier(0.22,0.61,0.36,1) both;}
+@keyframes suFadeIn{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+.su-eyebrow{display:flex;align-items:center;gap:0.7rem;font-family:'Cinzel',serif;font-size:0.5rem;
+  font-weight:600;letter-spacing:0.24em;color:var(--gold);text-transform:uppercase;margin-bottom:0.4rem;}
+.su-eyebrow::before,.su-eyebrow::after{content:'';display:block;width:32px;height:1px;background:rgba(184,137,42,0.38);}
+/* BIG sugar/motivational line */
+.su-sugar{font-family:'EB Garamond',serif;font-size:clamp(1.4rem,4.5vw,2rem);font-style:italic;
+  color:var(--gold2);text-align:center;margin-bottom:0.7rem;line-height:1.25;
+  min-height:1.3em;transition:opacity 0.35s;}
+.su-heading{font-family:'Cormorant Garamond',serif;font-size:clamp(1.85rem,5.5vw,3rem);
+  font-weight:300;font-style:italic;color:var(--crimson);text-align:center;line-height:1.15;
+  margin-bottom:0.4rem;max-width:580px;}
+.su-subhead{font-family:'EB Garamond',serif;font-size:0.85rem;color:var(--muted);
+  text-align:center;margin-bottom:1.4rem;}
+.su-body{width:100%;max-width:480px;}
+.su-flbl{display:block;font-family:'Cinzel',serif;font-size:0.49rem;font-weight:600;
+  letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;}
+/* Base text input */
+.su-inp{width:100%;background:transparent;border:none;border-bottom:1.5px solid rgba(184,137,42,0.28);
+  color:var(--text);font-family:'EB Garamond',serif;font-size:1.15rem;
+  padding:0.55rem 0 0.52rem;outline:none;transition:border-color 0.2s;caret-color:var(--gold2);}
+.su-inp::placeholder{color:rgba(107,83,64,0.3);}
 .su-inp:focus{border-bottom-color:var(--gold2);}
-.su-inp[type=date]::-webkit-calendar-picker-indicator{opacity:0.5;}
-.su-ff{margin-bottom:1.25rem;}
-.su-sel{width:100%;background:transparent;border:none;border-bottom:1.5px solid rgba(184,137,42,0.3);
-  color:var(--text);font-family:'EB Garamond',serif;font-size:1.05rem;font-style:italic;
-  padding:0.45rem 1.4rem 0.48rem 0;outline:none;cursor:pointer;-webkit-appearance:none;appearance:none;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7' viewBox='0 0 11 7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%23B8892A' stroke-width='1.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;background-position:right 0.2rem center;}
-.su-sel option{background:#fff;color:var(--text);}
-.su-sel:focus{border-bottom-color:var(--gold2);}
-.su-g2{display:grid;grid-template-columns:1fr 1fr;gap:0 1.3rem;}
-.su-pills{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.25rem;}
-.su-pill{padding:0.48rem 1.05rem;border:1.5px solid var(--border);border-radius:50px;
-  background:#fff;color:var(--text-sub);
-  font-family:'EB Garamond',serif;font-size:0.92rem;cursor:pointer;
-  transition:border-color 0.18s,background 0.18s,color 0.18s;user-select:none;}
-.su-pill:hover{border-color:var(--gold2);color:var(--text);}
+.su-inp.invalid{border-bottom-color:#c53030!important;animation:suShake 0.35s ease;}
+.su-ff{margin-bottom:1.5rem;}
+/* ── Custom select trigger ── */
+.su-csel{width:100%;background:transparent;border:none;border-bottom:1.5px solid rgba(184,137,42,0.28);
+  color:rgba(107,83,64,0.45);font-family:'EB Garamond',serif;font-size:1.15rem;
+  padding:0.55rem 1.8rem 0.52rem 0;outline:none;cursor:pointer;text-align:left;
+  display:flex;align-items:center;justify-content:space-between;
+  transition:border-color 0.2s;background:none;position:relative;}
+.su-csel.has-val{color:var(--text);}
+.su-csel:hover,.su-csel:focus{border-bottom-color:var(--gold2);}
+.su-csel.invalid{border-bottom-color:#c53030!important;}
+.su-csel-arrow{flex-shrink:0;opacity:0.5;margin-left:0.4rem;}
+/* ── Bottom sheet dropdown ── */
+.su-drop-ov{position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0);
+  display:flex;align-items:flex-end;transition:background 0.28s;}
+.su-drop-ov.open{background:rgba(0,0,0,0.48);}
+.su-drop-sheet{width:100%;max-height:78vh;background:#fffdf7;border-radius:22px 22px 0 0;
+  padding-bottom:env(safe-area-inset-bottom,0);
+  transform:translateY(100%);transition:transform 0.35s cubic-bezier(0.32,0.72,0,1);
+  display:flex;flex-direction:column;box-shadow:0 -8px 40px rgba(0,0,0,0.15);}
+.su-drop-ov.open .su-drop-sheet{transform:translateY(0);}
+.su-drop-handle{width:38px;height:4px;background:rgba(184,137,42,0.3);border-radius:2px;margin:14px auto 0;}
+.su-drop-title{font-family:'Cinzel',serif;font-size:0.56rem;font-weight:600;letter-spacing:0.2em;
+  text-transform:uppercase;color:var(--gold);text-align:center;padding:1rem 1.5rem 0.4rem;}
+.su-drop-search{margin:0.6rem 1.2rem 0.5rem;padding:0.7rem 1.1rem;
+  background:rgba(253,246,216,0.65);border:1px solid rgba(184,137,42,0.22);border-radius:50px;
+  font-family:'EB Garamond',serif;font-size:1.05rem;color:var(--text);
+  outline:none;width:calc(100% - 2.4rem);}
+.su-drop-search::placeholder{color:rgba(107,83,64,0.35);font-style:italic;}
+.su-drop-list{flex:1;overflow-y:auto;padding:0.3rem 0 2rem;}
+.su-drop-item{padding:1.05rem 1.5rem;font-family:'EB Garamond',serif;font-size:1.15rem;
+  color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:space-between;
+  border-bottom:1px solid rgba(184,137,42,0.07);transition:background 0.12s,color 0.12s;line-height:1.3;}
+.su-drop-item:last-child{border-bottom:none;}
+.su-drop-item:active{background:rgba(123,31,46,0.06);}
+.su-drop-item.active{color:var(--crimson);font-style:italic;}
+.su-drop-item.active::after{content:'✓';flex-shrink:0;margin-left:0.5rem;}
+.su-drop-item.hidden-item{display:none;}
+/* ── DOB 3-part picker ── */
+.su-dob-wrap{display:flex;gap:1rem;justify-content:center;align-items:flex-end;max-width:400px;margin:0 auto;}
+.su-dob-part{flex:1;text-align:center;}
+.su-dob-part.wide{flex:1.5;}
+.su-dob-lbl{font-family:'Cinzel',serif;font-size:0.46rem;letter-spacing:0.15em;text-transform:uppercase;
+  color:var(--gold);display:block;margin-bottom:0.35rem;}
+.su-dob-inp{width:100%;text-align:center;font-family:'Cormorant Garamond',serif;font-size:2rem;
+  font-weight:300;color:var(--crimson);background:transparent;border:none;
+  border-bottom:1.5px solid rgba(184,137,42,0.3);padding:0.2rem 0 0.35rem;
+  outline:none;transition:border-color 0.2s;-moz-appearance:textfield;}
+.su-dob-inp::-webkit-outer-spin-button,.su-dob-inp::-webkit-inner-spin-button{-webkit-appearance:none;}
+.su-dob-inp:focus{border-bottom-color:var(--gold2);}
+.su-dob-inp::placeholder{color:rgba(107,83,64,0.22);font-size:1.4rem;}
+.su-dob-btn{width:100%;text-align:center;font-family:'Cormorant Garamond',serif;font-size:1.8rem;
+  font-weight:300;color:rgba(107,83,64,0.35);background:transparent;border:none;
+  border-bottom:1.5px solid rgba(184,137,42,0.3);padding:0.2rem 0 0.35rem;
+  cursor:pointer;transition:color 0.2s,border-color 0.2s;}
+.su-dob-btn.has-val{color:var(--crimson);}
+.su-dob-btn:hover{border-bottom-color:var(--gold2);}
+/* ── Height pill grid ── */
+.su-ht-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.55rem;margin-top:0.6rem;}
+.su-ht-pill{padding:0.75rem 0.3rem;border:1.5px solid var(--border);border-radius:12px;
+  background:#fff;text-align:center;cursor:pointer;
+  font-family:'EB Garamond',serif;font-size:1rem;color:var(--text);
+  transition:all 0.18s;user-select:none;line-height:1.25;}
+.su-ht-pill:hover{border-color:var(--gold2);background:rgba(253,246,216,0.4);}
+.su-ht-pill.sel{border-color:var(--crimson);background:rgba(123,31,46,0.06);
+  color:var(--crimson);box-shadow:0 0 0 2px rgba(123,31,46,0.1);}
+/* ── Diet big pills ── */
+.su-dpills{display:grid;grid-template-columns:1fr 1fr;gap:0.65rem;margin-top:0.4rem;}
+.su-dpill{padding:1rem 0.8rem;border:1.5px solid var(--border);border-radius:14px;
+  background:#fff;text-align:center;cursor:pointer;
+  font-family:'EB Garamond',serif;font-size:1.1rem;color:var(--text);
+  transition:all 0.18s;user-select:none;line-height:1.3;}
+.su-dpill:hover{border-color:var(--gold2);background:rgba(253,246,216,0.4);}
+.su-dpill.sel{border-color:var(--crimson);background:rgba(123,31,46,0.06);color:var(--crimson);}
+.su-dpill-icon{font-size:1.4rem;display:block;margin-bottom:0.25rem;}
+/* ── Old pills (gender etc) ── */
+.su-pills{display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:0.3rem;}
+.su-pill{padding:0.65rem 1.3rem;border:1.5px solid var(--border);border-radius:50px;
+  background:#fff;color:var(--text);font-family:'EB Garamond',serif;font-size:1.05rem;
+  cursor:pointer;transition:all 0.18s;user-select:none;}
+.su-pill:hover{border-color:var(--gold2);}
 .su-pill.sel{border-color:var(--crimson);background:rgba(123,31,46,0.07);color:var(--crimson);}
 .su-pill.sel::before{content:'✓ ';}
-.su-tiles{display:grid;grid-template-columns:1fr 1fr;gap:0.65rem;max-width:460px;margin:1rem auto 0;}
-.su-tile{border:1.5px solid var(--border);border-radius:14px;
-  background:#fff;padding:1rem 0.85rem;text-align:center;cursor:pointer;
-  transition:border-color 0.2s,background 0.2s,box-shadow 0.2s;}
-.su-tile:hover{border-color:rgba(184,137,42,0.45);background:rgba(253,246,216,0.4);box-shadow:0 4px 14px rgba(123,31,46,0.08);}
-.su-tile.sel{border-color:var(--crimson);background:rgba(123,31,46,0.05);box-shadow:0 0 0 2px rgba(123,31,46,0.12);}
-.su-tile-icon{font-size:1.55rem;margin-bottom:0.3rem;}
-.su-tile-name{font-family:'Cinzel',serif;font-size:0.56rem;font-weight:600;letter-spacing:0.1em;color:var(--text);text-transform:uppercase;}
-.su-tile-sub{font-family:'EB Garamond',serif;font-size:0.73rem;color:var(--muted);margin-top:0.12rem;}
-.su-continue{width:100%;max-width:540px;padding:0.78rem 1.5rem;
-  background:linear-gradient(135deg,var(--crimson),#9b2030);color:#f5ead8;
-  font-family:'Cinzel',serif;font-size:0.6rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;
-  border:none;border-radius:8px;cursor:pointer;margin-top:1.2rem;
-  transition:opacity 0.2s,transform 0.15s;box-shadow:0 4px 16px rgba(123,31,46,0.32);}
-.su-continue:hover{opacity:0.9;transform:translateY(-1px);}
+/* ── Marital status tiles ── */
+.su-tiles{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;max-width:440px;margin:1rem auto 0;}
+.su-tile{border:1.5px solid var(--border);border-radius:14px;background:#fff;
+  padding:1.1rem 0.9rem;text-align:center;cursor:pointer;transition:all 0.2s;}
+.su-tile:hover{border-color:rgba(184,137,42,0.45);background:rgba(253,246,216,0.35);box-shadow:0 4px 14px rgba(123,31,46,0.08);}
+.su-tile.sel{border-color:var(--crimson);background:rgba(123,31,46,0.05);box-shadow:0 0 0 2.5px rgba(123,31,46,0.15);}
+.su-tile-icon{font-size:1.7rem;margin-bottom:0.38rem;}
+.su-tile-name{font-family:'Cinzel',serif;font-size:0.58rem;font-weight:600;letter-spacing:0.1em;color:var(--text);text-transform:uppercase;}
+.su-tile-sub{font-family:'EB Garamond',serif;font-size:0.75rem;color:var(--muted);margin-top:0.12rem;}
+/* ── Continue button ── */
+.su-continue{width:100%;max-width:480px;padding:0.95rem 1.5rem;
+  background:linear-gradient(135deg,var(--crimson) 0%,#9b1a2e 100%);color:#f5ead8;
+  font-family:'Cinzel',serif;font-size:0.62rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;
+  border:none;border-radius:12px;cursor:pointer;margin-top:1.5rem;
+  transition:opacity 0.2s,transform 0.18s,box-shadow 0.18s;
+  box-shadow:0 5px 20px rgba(123,31,46,0.35);}
+.su-continue:hover{opacity:0.91;transform:translateY(-2px);box-shadow:0 9px 28px rgba(123,31,46,0.42);}
+.su-continue:active{transform:translateY(0);}
 .su-footer{position:fixed;bottom:1.1rem;left:0;right:0;text-align:center;
-  font-family:'EB Garamond',serif;font-size:0.86rem;color:var(--muted);pointer-events:none;}
+  font-family:'EB Garamond',serif;font-size:0.88rem;color:var(--muted);pointer-events:none;}
 .su-footer a{color:var(--gold2);pointer-events:all;text-decoration:none;cursor:pointer;}
 .su-footer a:hover{color:var(--crimson);}
 .su-back{position:fixed;top:1rem;left:1.1rem;background:transparent;border:none;
-  color:var(--muted);font-family:'EB Garamond',serif;font-size:0.88rem;cursor:pointer;
-  display:flex;align-items:center;gap:0.25rem;padding:0.35rem;}
+  color:var(--muted);font-family:'EB Garamond',serif;font-size:0.95rem;cursor:pointer;
+  display:flex;align-items:center;gap:0.3rem;padding:0.35rem;z-index:10;}
 .su-back:hover{color:var(--crimson);}
-.su-mem-cards{display:flex;flex-direction:column;gap:0.65rem;width:100%;max-width:540px;}
-.su-mem-card{display:flex;align-items:center;gap:1rem;padding:0.85rem 1.15rem;
-  border:1.5px solid var(--border);border-radius:12px;
-  background:#fff;cursor:pointer;transition:border-color 0.2s,background 0.2s,box-shadow 0.2s;}
-.su-mem-card:hover{border-color:var(--gold2);box-shadow:0 4px 14px rgba(123,31,46,0.08);}
-.su-mem-card.sel{border-color:var(--crimson);background:rgba(123,31,46,0.04);box-shadow:0 0 0 2px rgba(123,31,46,0.1);}
-.su-mem-icon{font-size:1.35rem;flex-shrink:0;}
-.su-mem-tier{font-family:'Cinzel',serif;font-size:0.56rem;font-weight:700;letter-spacing:0.14em;color:var(--crimson);}
-.su-mem-price{font-family:'Cormorant Garamond',serif;font-size:0.98rem;color:var(--gold2);font-style:italic;}
-.su-mem-desc{font-family:'EB Garamond',serif;font-size:0.76rem;color:var(--muted);margin-top:0.08rem;}
-.su-review-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.45rem;width:100%;max-width:560px;margin-bottom:0.9rem;}
-.su-rc{border:1px solid var(--border);border-radius:8px;background:#fff;padding:0.65rem 0.85rem;}
+/* progress bar */
+.su-prog-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--gold2),var(--crimson));
+  border-radius:0 2px 2px 0;transition:width 0.4s cubic-bezier(0.4,0,0.2,1);z-index:5;}
+.su-mem-cards{display:flex;flex-direction:column;gap:0.8rem;width:100%;max-width:480px;}
+.su-mem-card{display:flex;align-items:center;gap:1.1rem;padding:1rem 1.2rem;
+  border:1.5px solid var(--border);border-radius:14px;background:#fff;
+  cursor:pointer;transition:all 0.2s;}
+.su-mem-card:hover{border-color:var(--gold2);box-shadow:0 4px 18px rgba(123,31,46,0.1);}
+.su-mem-card.sel{border-color:var(--crimson);background:rgba(123,31,46,0.04);box-shadow:0 0 0 2px rgba(123,31,46,0.12);}
+.su-mem-icon{font-size:1.5rem;flex-shrink:0;}
+.su-mem-tier{font-family:'Cinzel',serif;font-size:0.58rem;font-weight:700;letter-spacing:0.14em;color:var(--crimson);}
+.su-mem-price{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--gold2);font-style:italic;}
+.su-mem-desc{font-family:'EB Garamond',serif;font-size:0.8rem;color:var(--muted);margin-top:0.1rem;}
+.su-review-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;width:100%;max-width:560px;margin-bottom:1rem;}
+.su-rc{border:1px solid var(--border);border-radius:10px;background:#fff;padding:0.72rem 0.9rem;}
 .su-rl{font-family:'Cinzel',serif;font-size:0.46rem;letter-spacing:0.14em;color:var(--gold2);text-transform:uppercase;margin-bottom:0.12rem;}
-.su-rv{font-family:'EB Garamond',serif;font-size:0.85rem;color:var(--text);}
-.su-ta{width:100%;background:#fffdf7;border:1.5px solid rgba(184,137,42,0.25);
-  border-radius:8px;color:var(--text);font-family:'EB Garamond',serif;font-size:1rem;font-style:italic;
-  padding:0.65rem 0.85rem;outline:none;resize:vertical;min-height:90px;}
-.su-ta::placeholder{color:rgba(107,83,64,0.32);font-style:italic;}
+.su-rv{font-family:'EB Garamond',serif;font-size:0.9rem;color:var(--text);}
+.su-ta{width:100%;background:#fffdf7;border:1.5px solid rgba(184,137,42,0.22);
+  border-radius:12px;color:var(--text);font-family:'EB Garamond',serif;font-size:1.1rem;
+  padding:0.8rem 1.05rem;outline:none;resize:vertical;min-height:105px;}
+.su-ta::placeholder{color:rgba(107,83,64,0.3);}
 .su-ta:focus{border-color:var(--gold2);}
 .su-pw{position:relative;}
-.su-pw .su-inp{padding-right:1.8rem;}
+.su-pw .su-inp{padding-right:2rem;}
 .su-pw-eye{position:absolute;right:0;top:50%;transform:translateY(-50%);background:none;border:none;
-  cursor:pointer;color:var(--muted);font-size:0.85rem;padding:0.2rem;}
-.su-tc-wrap{width:100%;max-width:540px;margin-top:0.8rem;}
-.su-tc-scroll{background:#fffdf7;border:1px solid var(--border);border-radius:10px;
-  padding:0.9rem 1.1rem;max-height:110px;overflow-y:auto;font-family:'EB Garamond',serif;
-  font-size:0.78rem;color:var(--muted);line-height:1.85;margin-bottom:0.7rem;}
-.su-tc-scroll h4{font-family:'Cinzel',serif;font-size:0.55rem;letter-spacing:0.1em;text-transform:uppercase;
-  color:var(--gold2);margin-bottom:0.4rem;}
-.su-tc-row{display:flex;align-items:flex-start;gap:0.55rem;font-family:'EB Garamond',serif;
-  font-size:0.78rem;color:var(--muted);line-height:1.65;}
-.su-tc-row input{accent-color:var(--crimson);margin-top:3px;flex-shrink:0;width:12px;height:12px;cursor:pointer;}
-.su-char-count{font-family:'EB Garamond',serif;font-size:0.7rem;color:var(--muted);margin-top:0.25rem;}
+  cursor:pointer;color:var(--muted);font-size:0.9rem;padding:0.2rem;}
+.su-tc-wrap{width:100%;max-width:480px;margin-top:0.8rem;}
+.su-tc-row{display:flex;align-items:flex-start;gap:0.6rem;font-family:'EB Garamond',serif;
+  font-size:0.9rem;color:var(--muted);line-height:1.7;}
+.su-tc-row input{accent-color:var(--crimson);margin-top:4px;flex-shrink:0;width:15px;height:15px;cursor:pointer;}
+.su-char-count{font-family:'EB Garamond',serif;font-size:0.72rem;color:var(--muted);margin-top:0.3rem;text-align:right;}
+/* shake on invalid */
+@keyframes suShake{0%,100%{transform:translateX(0);}25%{transform:translateX(-6px);}75%{transform:translateX(6px);}}
 
 .step-nav{display:flex;justify-content:space-between;align-items:center;margin-top:1.6rem;gap:0.8rem;}
 .btn-step{
@@ -1399,12 +1469,12 @@ html:has(#pgHome.active){scroll-behavior:smooth;}
 .psf-card.sel .psf-card-icon svg{color:#fff;}
 .psf-card-lbl{font-family:'Cinzel',serif;font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-sub);}
 .psf-card.sel .psf-card-lbl{color:var(--crimson);}
-.psf-heart-wrap{width:100%;overflow:hidden;}
-.psf-heart{position:relative;width:480px;height:460px;margin:1.6rem auto 0;}
+.psf-heart-wrap{width:100%;overflow:visible;}
+.psf-heart{position:relative;width:480px;height:460px;margin:1.2rem auto 0;}
 .psf-heart .psf-card{position:absolute;width:140px;height:140px;}
 .psf-heart .psf-card-self{border-color:rgba(123,31,46,0.45);background:linear-gradient(135deg,rgba(123,31,46,0.05),rgba(184,137,42,0.05));box-shadow:0 0 0 2px rgba(123,31,46,0.25),0 8px 24px rgba(123,31,46,0.12);}
-@media(max-width:520px){.psf-heart{transform:scale(0.7);transform-origin:top center;margin-bottom:-138px;}}
-@media(max-width:380px){.psf-heart{transform:scale(0.58);transform-origin:top center;margin-bottom:-193px;}}
+@media(max-width:560px){.psf-heart{transform:scale(0.68);transform-origin:top center;margin-bottom:-147px;}}
+@media(max-width:400px){.psf-heart{transform:scale(0.54);transform-origin:top center;margin-bottom:-212px;}}
 .signup-progress-wrap{padding:1.2rem 2rem 0;max-width:680px;margin:0 auto;}
 .sp-step-label{font-family:'Josefin Sans',sans-serif;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;}
 .sp-bar-track{height:4px;background:rgba(184,137,42,0.2);border-radius:2px;overflow:hidden;}
@@ -2590,6 +2660,7 @@ checkCookieConsent();
      PAGE: SIGNUP
 ══════════════════════════════════════ -->
 <div id="pgSignup" class="page doodle-bg" style="display:none;">
+  <div class="su-prog-bar" id="suProgBar" style="width:0%;"></div>
   <!-- Trust strip (hidden) -->
   <div class="signup-trust-strip" style="display:none!important;">
     <div class="sts-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>100% Private & Secure</div>
@@ -2679,16 +2750,28 @@ checkCookieConsent();
     <div class="su-heading">When were you born?</div>
     <div class="su-body">
       <div id="s_dob_picker" style="display:none;"></div>
-      <div class="su-ff" style="max-width:280px;margin:0 auto;">
-        <label class="su-flbl" style="text-align:center;display:block;">Date of Birth</label>
-        <input id="s_dob" class="su-inp" type="date" oninput="_dobAgeHint(this.value)" max="" style="text-align:center;font-size:1.1rem;letter-spacing:0.05em;">
+      <input id="s_dob" type="hidden">
+      <input id="suDobM" type="hidden">
+      <div class="su-dob-wrap">
+        <div class="su-dob-part">
+          <span class="su-dob-lbl">Day</span>
+          <input id="suDobD" class="su-dob-inp" type="number" min="1" max="31" placeholder="DD" oninput="_suDobSync()">
+        </div>
+        <div class="su-dob-part wide">
+          <span class="su-dob-lbl">Month</span>
+          <button id="suDobMBtn" class="su-dob-btn" type="button" onclick="openSuDobMonth()">Month</button>
+        </div>
+        <div class="su-dob-part">
+          <span class="su-dob-lbl">Year</span>
+          <input id="suDobY" class="su-dob-inp" type="number" min="1950" max="2007" placeholder="YYYY" oninput="_suDobSync()">
+        </div>
       </div>
-      <small id="dobAgeHint" style="font-family:'EB Garamond',serif;font-size:0.78rem;font-style:italic;color:rgba(184,137,42,0.6);display:block;margin-top:0.5rem;text-align:center;">Min age: 21 for Male, 18 for Female</small>
+      <small id="dobAgeHint" style="font-family:'EB Garamond',serif;font-size:0.9rem;font-style:italic;color:rgba(184,137,42,0.65);display:block;margin-top:1rem;text-align:center;">Min age: 21 for Male, 18 for Female</small>
       <select id="s_cx" style="display:none;"><option value=""></option><option>Very Fair</option><option>Fair</option><option>Wheatish</option><option>Wheatish Brown</option><option>Dark</option></select>
       <select id="s_bt" style="display:none;"><option value=""></option><option>Slim</option><option>Athletic</option><option>Average</option><option>Heavy</option></select>
       <select id="s_bg" style="display:none;"><option value=""></option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>O+</option><option>O-</option><option>AB+</option><option>AB-</option></select>
       <select id="s_da" style="display:none;"><option>No</option><option>Yes</option></select>
-      <button class="su-continue" onclick="_suScreen('4')" style="margin-top:2.5rem;">Continue →</button>
+      <button class="su-continue" onclick="_suGo('4',[{id:'s_dob',msg:'Please enter your date of birth.'}])" style="margin-top:2rem;">Continue →</button>
     </div>
     <div class="su-footer">Already registered? <a onclick="showPage('pgLogin')">Sign In →</a></div>
   </div>
@@ -2698,16 +2781,40 @@ checkCookieConsent();
     <button class="su-back" onclick="_suScreen('3')">← Back</button>
     <div class="su-eyebrow">About You</div>
     <div class="su-sugar" id="suSugar4">Halfway there!</div>
-    <div class="su-heading">Your height &amp; language</div>
+    <div class="su-heading">How tall are you?</div>
     <div class="su-body">
-      <div class="su-ff"><label class="su-flbl">Height</label><select id="s_ht" class="su-sel"><option value="">Select your height</option><option>4'8" (142cm)</option><option>4'10" (147cm)</option><option>5'0" (152cm)</option><option>5'1" (155cm)</option><option>5'2" (157cm)</option><option>5'3" (160cm)</option><option>5'4" (163cm)</option><option>5'5" (165cm)</option><option>5'6" (168cm)</option><option>5'7" (170cm)</option><option>5'8" (173cm)</option><option>5'9" (175cm)</option><option>5'10" (178cm)</option><option>5'11" (180cm)</option><option>6'0" (183cm)</option><option>6'1" (185cm)</option><option>6'2" (188cm)</option><option>6'3" (191cm)</option><option>6'4" (193cm)</option></select></div>
-      <div class="su-ff" style="margin-top:1.8rem;"><label class="su-flbl">Mother Tongue</label><select id="s_mt" class="su-sel"><option value="">Select language</option><option>Telugu</option><option>Kannada</option><option>Tamil</option><option>Hindi</option><option>Marathi</option><option>Gujarati</option><option>Bengali</option><option>Malayalam</option><option>Odia</option><option>Punjabi</option><option>Other</option></select></div>
+      <input id="s_ht" type="hidden">
+      <div class="su-ht-grid">
+        <div class="su-ht-pill" onclick="_suHtPick(&quot;4'10&quot;&quot;,this)">4'10"</div>
+        <div class="su-ht-pill" onclick="_suHtPick(&quot;5'0&quot;&quot;,this)">5'0"</div>
+        <div class="su-ht-pill" onclick="_suHtPick(&quot;5'1&quot;&quot;,this)">5'1"</div>
+        <div class="su-ht-pill" onclick="_suHtPick(&quot;5'2&quot;&quot;,this)">5'2"</div>
+        <div class="su-ht-pill" onclick="_suHtPick(&quot;5'3&quot;&quot;,this)">5'3"</div>
+        <div class="su-ht-pill" onclick="_suHtPick(&quot;5'4&quot;&quot;,this)">5'4"</div>
+        <div class="su-ht-pill" onclick="_suHtPick(&quot;5'5&quot;&quot;,this)">5'5"</div>
+        <div class="su-ht-pill" onclick="_suHtPick(&quot;5'6&quot;&quot;,this)">5'6"</div>
+        <div class="su-ht-pill" onclick="_suHtPick(&quot;5'7&quot;&quot;,this)">5'7"</div>
+        <div class="su-ht-pill" onclick="_suHtPick(&quot;5'8&quot;&quot;,this)">5'8"</div>
+        <div class="su-ht-pill" onclick="_suHtPick(&quot;5'9&quot;&quot;,this)">5'9"</div>
+        <div class="su-ht-pill" onclick="_suHtPick(&quot;5'10&quot;&quot;,this)">5'10"</div>
+        <div class="su-ht-pill" onclick="_suHtPick(&quot;5'11&quot;&quot;,this)">5'11"</div>
+        <div class="su-ht-pill" onclick="_suHtPick(&quot;6'0&quot;&quot;,this)">6'0"</div>
+        <div class="su-ht-pill" onclick="_suHtPick(&quot;6'1&quot;&quot;,this)">6'1"</div>
+        <div class="su-ht-pill" onclick="_suHtPick(&quot;6'2&quot;&quot;,this)">6'2"</div>
+        <div class="su-ht-pill" onclick="_suHtPick(&quot;6'3&quot;&quot;,this)">6'3"</div>
+        <div class="su-ht-pill" onclick="_suHtPick(&quot;6'4&quot;&quot;,this)">6'4"</div>
+      </div>
+      <div class="su-ff" style="margin-top:2rem;">
+        <label class="su-flbl">Mother Tongue</label>
+        <select id="s_mt" style="display:none;"><option value="">Select</option><option>Telugu</option><option>Kannada</option><option>Tamil</option><option>Hindi</option><option>Marathi</option><option>Gujarati</option><option>Bengali</option><option>Malayalam</option><option>Odia</option><option>Punjabi</option><option>Other</option></select>
+        <button class="su-csel" data-csel="s_mt" type="button" onclick="openSuDrop('s_mt','Mother Tongue')">Select language<svg width="11" height="7" viewBox="0 0 11 7" fill="none" style="flex-shrink:0;opacity:0.5;margin-left:auto;"><path d="M1 1l4.5 4.5L10 1" stroke="#B8892A" stroke-width="1.4" stroke-linecap="round"/></svg></button>
+      </div>
       <input id="s_tob" type="hidden">
       <input id="s_pob" type="hidden">
       <select id="s_tob_h" style="display:none;"><option value=""></option></select>
       <select id="s_tob_m" style="display:none;"><option value=""></option></select>
       <select id="s_tob_ap" style="display:none;"><option value=""></option></select>
-      <button class="su-continue" onclick="_suScreen('5')" style="margin-top:2.5rem;">Continue →</button>
+      <button class="su-continue" onclick="_suGo('5',[{id:'s_ht',msg:'Please select your height.'},{id:'s_mt',msg:'Please select your mother tongue.'}])">Continue →</button>
     </div>
     <div class="su-footer">Already registered? <a onclick="showPage('pgLogin')">Sign In →</a></div>
   </div>
@@ -2724,7 +2831,7 @@ checkCookieConsent();
       <select id="s_country" style="display:none;" onchange="onCountryChange(true)"><option value="">India</option><option selected>India</option><option>United States</option><option>United Kingdom</option><option>Canada</option><option>Australia</option><option>UAE</option><option>Singapore</option><option>Germany</option><option>Other</option></select>
       <div id="s_state_wrap" style="display:none;"><select id="s_state" onchange="onStateChange()"><option value=""></option></select></div>
       <select id="s_res" style="display:none;"><option>Permanent Resident</option><option>NRI</option><option>Student Abroad</option><option>Work Visa</option></select>
-      <button class="su-continue" onclick="_suScreen('6')" style="margin-top:2.5rem;">Continue →</button>
+      <button class="su-continue" onclick="_suGo('6',[{id:'s_city',msg:'Please enter your city.'},{id:'s_native',msg:'Please enter your native place.'}])">Continue →</button>
     </div>
     <div class="su-footer">Already registered? <a onclick="showPage('pgLogin')">Sign In →</a></div>
   </div>
@@ -2737,12 +2844,25 @@ checkCookieConsent();
     <div class="su-heading">Gotram &amp; star sign</div>
     <div class="su-subhead">Hindu · Reddy Community only</div>
     <div class="su-body">
-      <div class="su-ff"><label class="su-flbl">Sub-Caste / Gotra</label><input id="s_gotra" class="su-inp" list="gotraList" placeholder="Type or select your Gotra…"><datalist id="gotraList"><option>Motati</option><option>Gudati</option><option>Pakanati</option><option>Gone</option><option>Chittepu</option><option>Bhumanchi</option><option>Pedakanti</option><option>Velama</option><option>Gajula</option><option>Konukanula</option><option>Cherukunutla</option><option>Chegolla</option><option>Other</option></datalist></div>
-      <div class="su-ff" style="margin-top:1.5rem;"><label class="su-flbl">Nakshatra</label><select id="s_nak" class="su-sel"><option value="">Select Nakshatra</option><option>Ashwini</option><option>Bharani</option><option>Krittika</option><option>Rohini</option><option>Mrigashira</option><option>Ardra</option><option>Punarvasu</option><option>Pushya</option><option>Ashlesha</option><option>Magha</option><option>Purva Phalguni</option><option>Uttara Phalguni</option><option>Hasta</option><option>Chitra</option><option>Swati</option><option>Vishakha</option><option>Anuradha</option><option>Jyeshtha</option><option>Mula</option><option>Purva Ashadha</option><option>Uttara Ashadha</option><option>Shravana</option><option>Dhanishtha</option><option>Shatabhisha</option><option>Purva Bhadrapada</option><option>Uttara Bhadrapada</option><option>Revati</option></select></div>
-      <div class="su-ff" style="margin-top:1.5rem;"><label class="su-flbl">Rashi (Moon Sign)</label><select id="s_rashi" class="su-sel" onchange="this.dataset.userEdited='1'"><option value="">Select Rashi</option><option>Mesha (Aries)</option><option>Vrishabha (Taurus)</option><option>Mithuna (Gemini)</option><option>Karka (Cancer)</option><option>Simha (Leo)</option><option>Kanya (Virgo)</option><option>Tula (Libra)</option><option>Vrishchika (Scorpio)</option><option>Dhanu (Sagittarius)</option><option>Makara (Capricorn)</option><option>Kumbha (Aquarius)</option><option>Meena (Pisces)</option></select></div>
+      <div class="su-ff">
+        <label class="su-flbl">Sub-Caste / Gotra</label>
+        <select id="s_gotra_sel" style="display:none;"><option value="">Select</option><option>Motati</option><option>Gudati</option><option>Pakanati</option><option>Gone</option><option>Chittepu</option><option>Bhumanchi</option><option>Pedakanti</option><option>Velama</option><option>Gajula</option><option>Konukanula</option><option>Cherukunutla</option><option>Chegolla</option><option>Other</option></select>
+        <input id="s_gotra" class="su-inp" list="gotraList" placeholder="Type or select your Gotra…" autocomplete="off">
+        <datalist id="gotraList"><option>Motati</option><option>Gudati</option><option>Pakanati</option><option>Gone</option><option>Chittepu</option><option>Bhumanchi</option><option>Pedakanti</option><option>Velama</option><option>Gajula</option><option>Konukanula</option><option>Cherukunutla</option><option>Chegolla</option><option>Other</option></datalist>
+      </div>
+      <div class="su-ff" style="margin-top:1.5rem;">
+        <label class="su-flbl">Nakshatra</label>
+        <select id="s_nak" style="display:none;"><option value="">Select</option><option>Ashwini</option><option>Bharani</option><option>Krittika</option><option>Rohini</option><option>Mrigashira</option><option>Ardra</option><option>Punarvasu</option><option>Pushya</option><option>Ashlesha</option><option>Magha</option><option>Purva Phalguni</option><option>Uttara Phalguni</option><option>Hasta</option><option>Chitra</option><option>Swati</option><option>Vishakha</option><option>Anuradha</option><option>Jyeshtha</option><option>Mula</option><option>Purva Ashadha</option><option>Uttara Ashadha</option><option>Shravana</option><option>Dhanishtha</option><option>Shatabhisha</option><option>Purva Bhadrapada</option><option>Uttara Bhadrapada</option><option>Revati</option></select>
+        <button class="su-csel" data-csel="s_nak" type="button" onclick="openSuDrop('s_nak','Nakshatra')">Select Nakshatra<svg width="11" height="7" viewBox="0 0 11 7" fill="none" style="flex-shrink:0;opacity:0.5;margin-left:auto;"><path d="M1 1l4.5 4.5L10 1" stroke="#B8892A" stroke-width="1.4" stroke-linecap="round"/></svg></button>
+      </div>
+      <div class="su-ff" style="margin-top:1.5rem;">
+        <label class="su-flbl">Rashi (Moon Sign)</label>
+        <select id="s_rashi" style="display:none;" onchange="this.dataset.userEdited='1'"><option value="">Select</option><option>Mesha (Aries)</option><option>Vrishabha (Taurus)</option><option>Mithuna (Gemini)</option><option>Karka (Cancer)</option><option>Simha (Leo)</option><option>Kanya (Virgo)</option><option>Tula (Libra)</option><option>Vrishchika (Scorpio)</option><option>Dhanu (Sagittarius)</option><option>Makara (Capricorn)</option><option>Kumbha (Aquarius)</option><option>Meena (Pisces)</option></select>
+        <button class="su-csel" data-csel="s_rashi" type="button" onclick="openSuDrop('s_rashi','Rashi — Moon Sign')">Select Rashi<svg width="11" height="7" viewBox="0 0 11 7" fill="none" style="flex-shrink:0;opacity:0.5;margin-left:auto;"><path d="M1 1l4.5 4.5L10 1" stroke="#B8892A" stroke-width="1.4" stroke-linecap="round"/></svg></button>
+      </div>
       <input id="s_fg" type="hidden" value="">
       <datalist id="fGotraList"><option>Motati</option><option>Other</option></datalist>
-      <button class="su-continue" onclick="_suScreen('7')" style="margin-top:2.5rem;">Continue →</button>
+      <button class="su-continue" onclick="_suGo('7',[{id:'s_gotra',msg:'Please enter your Gotra.'},{id:'s_nak',msg:'Please select your Nakshatra.'},{id:'s_rashi',msg:'Please select your Rashi.'}])">Continue →</button>
     </div>
     <div class="su-footer">Already registered? <a onclick="showPage('pgLogin')">Sign In →</a></div>
   </div>
@@ -2754,14 +2874,21 @@ checkCookieConsent();
     <div class="su-sugar" id="suSugar7">Excellent progress!</div>
     <div class="su-heading">What's your qualification?</div>
     <div class="su-body">
-      <div class="su-ff"><label class="su-flbl">Highest Qualification</label><select id="s_edu" class="su-sel" onchange="onEduChange()"><option value="">Select qualification</option><option>10th / SSC</option><option>Intermediate / 12th</option><option>Diploma</option><option>B.Tech / B.E.</option><option>B.Sc / B.Com / B.A.</option><option>MBBS</option><option>LLB</option><option>CA / CMA / CS</option><option>M.Tech / M.E.</option><option>M.Sc / M.Com / M.A.</option><option>M.B.A.</option><option>MD / MS</option><option>MS (USA/UK)</option><option>LLM</option><option>Ph.D.</option><option>Other</option></select></div>
-      <div class="su-ff" id="s_engcol_wrap" style="margin-top:1.8rem;"><label class="su-flbl">College / University</label><input id="s_engcol" class="su-inp" type="text" placeholder="e.g. Osmania University, IIT Bombay"></div>
+      <div class="su-ff">
+        <label class="su-flbl">Highest Qualification</label>
+        <select id="s_edu" style="display:none;" onchange="onEduChange()"><option value="">Select</option><option>10th / SSC</option><option>Intermediate / 12th</option><option>Diploma</option><option>B.Tech / B.E.</option><option>B.Sc / B.Com / B.A.</option><option>MBBS</option><option>LLB</option><option>CA / CMA / CS</option><option>M.Tech / M.E.</option><option>M.Sc / M.Com / M.A.</option><option>M.B.A.</option><option>MD / MS</option><option>MS (USA/UK)</option><option>LLM</option><option>Ph.D.</option><option>Other</option></select>
+        <button class="su-csel" data-csel="s_edu" type="button" onclick="openSuDrop('s_edu','Highest Qualification')">Select qualification<svg width="11" height="7" viewBox="0 0 11 7" fill="none" style="flex-shrink:0;opacity:0.5;margin-left:auto;"><path d="M1 1l4.5 4.5L10 1" stroke="#B8892A" stroke-width="1.4" stroke-linecap="round"/></svg></button>
+      </div>
+      <div class="su-ff" id="s_engcol_wrap" style="margin-top:1.8rem;">
+        <label class="su-flbl">College / University</label>
+        <input id="s_engcol" class="su-inp" type="text" placeholder="e.g. Osmania University, IIT Bombay">
+      </div>
       <select id="s_board" style="display:none;" onchange="onBoardChange()"><option value="">SSC</option><option>SSC</option><option>CBSE</option><option>ICSE</option><option>State Board</option><option>Other</option></select>
       <label id="s_school_lbl" style="display:none;"></label>
       <input id="s_school" type="hidden" value="">
       <input id="s_inter" type="hidden" value="">
       <div id="s_pgcol_wrap" style="display:none;"><input id="s_col" type="hidden" value=""></div>
-      <button class="su-continue" onclick="_suScreen('8')" style="margin-top:2.5rem;">Continue →</button>
+      <button class="su-continue" onclick="_suGo('8',[{id:'s_edu',msg:'Please select your qualification.'}])">Continue →</button>
     </div>
     <div class="su-footer">Already registered? <a onclick="showPage('pgLogin')">Sign In →</a></div>
   </div>
@@ -2773,15 +2900,26 @@ checkCookieConsent();
     <div class="su-sugar" id="suSugar8">Almost through the details!</div>
     <div class="su-heading">What do you do?</div>
     <div class="su-body">
-      <div class="su-ff"><label class="su-flbl">Employed In</label><select id="s_emp" class="su-sel"><option value="">Select sector</option><option>Government / PSU</option><option>Private Sector</option><option>Business / Self-Employed</option><option>Defence</option><option>Civil Services</option><option>IT / Software</option><option>Teaching / Professor</option><option>Agriculture</option><option>Not Working</option><option>Other</option></select></div>
-      <div class="su-ff" style="margin-top:1.5rem;"><label class="su-flbl">Occupation</label><input id="s_occ" class="su-inp" type="text" placeholder="e.g. Software Engineer, Doctor"></div>
-      <div class="su-ff" style="margin-top:1.5rem;"><label class="su-flbl">Annual Income (₹)</label><input id="s_inc" class="su-inp" type="number" min="0" placeholder="e.g. 600000" oninput="formatIncome(this)"><div id="incDisplay" style="font-family:'Cormorant Garamond',serif;font-size:0.85rem;font-style:italic;color:rgba(184,137,42,0.7);margin-top:0.2rem;"></div></div>
+      <div class="su-ff">
+        <label class="su-flbl">Employed In</label>
+        <select id="s_emp" style="display:none;"><option value="">Select</option><option>Government / PSU</option><option>Private Sector</option><option>Business / Self-Employed</option><option>Defence</option><option>Civil Services</option><option>IT / Software</option><option>Teaching / Professor</option><option>Agriculture</option><option>Not Working</option><option>Other</option></select>
+        <button class="su-csel" data-csel="s_emp" type="button" onclick="openSuDrop('s_emp','Employed In')">Select sector<svg width="11" height="7" viewBox="0 0 11 7" fill="none" style="flex-shrink:0;opacity:0.5;margin-left:auto;"><path d="M1 1l4.5 4.5L10 1" stroke="#B8892A" stroke-width="1.4" stroke-linecap="round"/></svg></button>
+      </div>
+      <div class="su-ff" style="margin-top:1.5rem;">
+        <label class="su-flbl">Occupation</label>
+        <input id="s_occ" class="su-inp" type="text" placeholder="e.g. Software Engineer, Doctor">
+      </div>
+      <div class="su-ff" style="margin-top:1.5rem;">
+        <label class="su-flbl">Annual Income (₹)</label>
+        <input id="s_inc" class="su-inp" type="number" min="0" placeholder="e.g. 600000" oninput="formatIncome(this)">
+        <div id="incDisplay" style="font-family:'Cormorant Garamond',serif;font-size:0.88rem;font-style:italic;color:rgba(184,137,42,0.7);margin-top:0.2rem;"></div>
+      </div>
       <input id="s_co" type="hidden" value="">
-      <select id="s_wcountry" style="display:none;" onchange="onWorkCountryChange()"><option value="">India</option><option selected>India</option><option>United States</option><option>Other</option></select>
+      <select id="s_wcountry" style="display:none;" onchange="onWorkCountryChange()"><option selected>India</option><option>United States</option><option>Other</option></select>
       <div id="s_wstate_wrap" style="display:none;"><select id="s_wstate" onchange="onWorkStateChange()"><option value=""></option></select></div>
       <input id="s_wcity" type="hidden" value="">
       <div id="s_visa_wrap" style="display:none;"><input id="s_visa" type="hidden" value=""></div>
-      <button class="su-continue" onclick="_suScreen('9')" style="margin-top:2.5rem;">Continue →</button>
+      <button class="su-continue" onclick="_suGo('9',[{id:'s_emp',msg:'Please select your sector.'},{id:'s_occ',msg:'Please enter your occupation.'},{id:'s_inc',msg:'Please enter your annual income.'}])">Continue →</button>
     </div>
     <div class="su-footer">Already registered? <a onclick="showPage('pgLogin')">Sign In →</a></div>
   </div>
@@ -2793,23 +2931,29 @@ checkCookieConsent();
     <div class="su-sugar" id="suSugar9">Just a few more steps!</div>
     <div class="su-heading">Your food preference?</div>
     <div class="su-body">
-      <div class="su-ff">
-        <div class="su-pills" style="justify-content:center;gap:0.8rem;">
-          <div class="su-pill" data-group="s_diet" data-val="Vegetarian" onclick="suPill('s_diet','Vegetarian',this)">Vegetarian</div>
-          <div class="su-pill" data-group="s_diet" data-val="Non-Vegetarian" onclick="suPill('s_diet','Non-Vegetarian',this)">Non-Vegetarian</div>
-          <div class="su-pill" data-group="s_diet" data-val="Eggetarian" onclick="suPill('s_diet','Eggetarian',this)">Eggetarian</div>
-          <div class="su-pill" data-group="s_diet" data-val="Vegan" onclick="suPill('s_diet','Vegan',this)">Vegan</div>
+      <select id="s_diet" style="display:none;"><option value="">Select</option><option>Vegetarian</option><option>Non-Vegetarian</option><option>Eggetarian</option><option>Vegan</option></select>
+      <div class="su-dpills">
+        <div class="su-dpill" onclick="suDPill('Vegetarian',this)">
+          <span class="su-dpill-icon">🌿</span>Vegetarian
         </div>
-        <select id="s_diet" class="su-sel" style="display:none;"><option value="">Select</option><option>Vegetarian</option><option>Non-Vegetarian</option><option>Eggetarian</option><option>Vegan</option></select>
+        <div class="su-dpill" onclick="suDPill('Non-Vegetarian',this)">
+          <span class="su-dpill-icon">🍗</span>Non-Vegetarian
+        </div>
+        <div class="su-dpill" onclick="suDPill('Eggetarian',this)">
+          <span class="su-dpill-icon">🥚</span>Eggetarian
+        </div>
+        <div class="su-dpill" onclick="suDPill('Vegan',this)">
+          <span class="su-dpill-icon">🌱</span>Vegan
+        </div>
       </div>
-      <div class="su-ff" style="margin-top:2rem;">
-        <label class="su-flbl" style="text-align:center;display:block;">About Yourself</label>
+      <div id="suDietAbout" style="margin-top:1.8rem;opacity:0;transform:translateY(10px);transition:all 0.35s;">
+        <label class="su-flbl">About Yourself</label>
         <textarea id="s_about" class="su-ta" placeholder="Your interests, hobbies, values…" rows="4" oninput="this.nextElementSibling.textContent=this.value.length+'/400 characters'"></textarea>
         <div class="su-char-count">0/400 characters</div>
       </div>
       <select id="s_smk" style="display:none;"><option selected>Never</option><option>Occasionally</option><option>Regularly</option></select>
       <select id="s_drk" style="display:none;"><option selected>Never</option><option>Occasionally</option><option>Regularly</option></select>
-      <button class="su-continue" onclick="_suScreen('10')" style="margin-top:2rem;">Continue →</button>
+      <button class="su-continue" onclick="_suGo('10',[{id:'s_diet',msg:'Please select your diet preference.'}])" style="margin-top:1.5rem;">Continue →</button>
     </div>
     <div class="su-footer">Already registered? <a onclick="showPage('pgLogin')">Sign In →</a></div>
   </div>
@@ -2837,7 +2981,7 @@ checkCookieConsent();
       <select id="s_sr" style="display:none;"><option selected>0</option><option>1</option><option>2</option><option>3</option><option>4+</option></select>
       <select id="s_srm" style="display:none;"><option selected>0</option><option>1</option><option>2</option><option>3</option><option>4+</option></select>
       <input id="s_pval" type="hidden" value="">
-      <button class="su-continue" onclick="_suScreen('11')" style="margin-top:2.5rem;">Continue →</button>
+      <button class="su-continue" onclick="_suGo('11',[{id:'s_fn',msg:'Please enter your father\'s name.'},{id:'s_mn',msg:'Please enter your mother\'s name.'}])">Continue →</button>
     </div>
     <div class="su-footer">Already registered? <a onclick="showPage('pgLogin')">Sign In →</a></div>
   </div>
@@ -2872,7 +3016,7 @@ checkCookieConsent();
     <div class="su-footer">Already registered? <a onclick="showPage('pgLogin')">Sign In →</a></div>
   </div>
 
-  <!-- suS12: Account Creation + T&C -->
+  <!-- suS12: Account -->
   <div class="su-screen" id="suS12">
     <button class="su-back" onclick="_suScreen('11')">← Back</button>
     <div class="su-eyebrow">Your Account</div>
@@ -2885,7 +3029,7 @@ checkCookieConsent();
       <div class="su-tc-wrap" style="margin-top:1rem;">
         <div class="su-tc-row"><input type="checkbox" id="tcAgree"><label for="tcAgree">I agree to the <a href="#" onclick="document.getElementById('tcFullModal').style.display='flex';return false;" style="color:var(--crimson);">Terms &amp; Conditions</a>. I confirm I belong to the <strong style="color:var(--crimson);">Reddy community, Hindu religion</strong>.</label></div>
       </div>
-      <button class="su-continue" onclick="_suScreen('13')">Continue →</button>
+      <button class="su-continue" onclick="_suGo('13',[{id:'s_mob',msg:'Please enter your mobile number.'},{id:'s_user',msg:'Please choose a username.'},{id:'s_pwd',msg:'Please create a password.'},{id:'tcAgree',type:'checked',msg:'Please agree to the Terms & Conditions.'}])">Continue →</button>
     </div>
     <div class="su-footer">Already registered? <a onclick="showPage('pgLogin')">Sign In →</a></div>
   </div>
@@ -4185,11 +4329,143 @@ async function doLogout(){
 // ═══════════ PRE-STEP FLOW ═══════════
 let _preState={who:'',gender:''};
 // ═══ IMMERSIVE SIGNUP NAVIGATION ═══
+/* ── Signup progress bar (screens 0–14 = 15 steps) ── */
+const _suSteps=['0','0b','1','2','3','4','5','6','7','8','9','10','11','12','13','14'];
 function _suScreen(id){
   document.querySelectorAll('#pgSignup .su-screen').forEach(s=>s.classList.remove('su-active'));
   const el=document.getElementById('suS'+id);
   if(el){el.classList.add('su-active');el.scrollTop=0;}
   window.scrollTo(0,0);
+  const idx=_suSteps.indexOf(String(id));
+  const pct=idx<0?0:Math.round((idx/(_suSteps.length-1))*100);
+  const bar=document.getElementById('suProgBar');if(bar)bar.style.width=pct+'%';
+}
+/* ── Custom bottom-sheet dropdown ── */
+function openSuDrop(selectId,title){
+  const sel=document.getElementById(selectId);if(!sel)return;
+  const opts=Array.from(sel.options).filter(o=>o.value!=='');
+  const cur=sel.value;
+  const ov=document.createElement('div');
+  ov.className='su-drop-ov';ov.id='suDropOv_'+selectId;
+  ov.dataset.sid=selectId;
+  ov.innerHTML=`<div class="su-drop-sheet">
+    <div class="su-drop-handle"></div>
+    <div class="su-drop-title">${title}</div>
+    <input class="su-drop-search" placeholder="Search…" oninput="suDropFilter(this,'suDL_${selectId}')">
+    <div class="su-drop-list" id="suDL_${selectId}">
+      ${opts.map(o=>`<div class="su-drop-item${cur===o.value?' active':''}"
+        onclick="pickSuDrop('${selectId}','${o.value.replace(/'/g,"&#39;")}','${o.text.replace(/'/g,"&#39;")}',this)">${o.text}</div>`).join('')}
+    </div></div>`;
+  ov.onclick=e=>{if(e.target===ov)closeSuDrop(selectId);};
+  document.body.appendChild(ov);
+  requestAnimationFrame(()=>{ov.classList.add('open');ov.querySelector('.su-drop-search').focus();});
+}
+function suDropFilter(inp,listId){
+  const q=inp.value.toLowerCase();
+  document.getElementById(listId).querySelectorAll('.su-drop-item').forEach(i=>{
+    i.classList.toggle('hidden-item',!i.textContent.toLowerCase().includes(q));
+  });
+}
+function pickSuDrop(selectId,value,label,itemEl){
+  const sel=document.getElementById(selectId);if(sel)sel.value=value;
+  document.querySelectorAll('[data-csel="'+selectId+'"]').forEach(t=>{
+    t.textContent='';
+    const span=document.createElement('span');span.textContent=label;
+    const arrow=document.createElement('svg');
+    arrow.setAttribute('width','11');arrow.setAttribute('height','7');arrow.setAttribute('viewBox','0 0 11 7');arrow.setAttribute('fill','none');
+    arrow.innerHTML='<path d="M1 1l4.5 4.5L10 1" stroke="#B8892A" stroke-width="1.4" stroke-linecap="round"/>';
+    arrow.style.flexShrink='0';arrow.style.opacity='0.5';
+    t.appendChild(span);t.appendChild(arrow);
+    t.classList.add('has-val');t.classList.remove('invalid');
+  });
+  itemEl.closest('.su-drop-sheet').parentElement.querySelectorAll('.su-drop-item').forEach(i=>i.classList.remove('active'));
+  itemEl.classList.add('active');
+  closeSuDrop(selectId);
+}
+function closeSuDrop(selectId){
+  const ov=document.getElementById('suDropOv_'+(selectId||''));
+  if(!ov){document.querySelectorAll('.su-drop-ov').forEach(o=>{o.classList.remove('open');setTimeout(()=>o.remove(),340);});return;}
+  ov.classList.remove('open');setTimeout(()=>ov.remove(),340);
+}
+/* ── init custom select triggers ── */
+function _suInitTrigger(selectId,placeholder){
+  const sel=document.getElementById(selectId);if(!sel)return;
+  document.querySelectorAll('[data-csel="'+selectId+'"]').forEach(t=>{
+    const cur=Array.from(sel.options).find(o=>o.selected&&o.value);
+    if(cur){t.textContent='';const s=document.createElement('span');s.textContent=cur.text;t.appendChild(s);t.classList.add('has-val');}
+    else{t.textContent='';const s=document.createElement('span');s.textContent=placeholder||'Select…';t.appendChild(s);}
+    const arr=document.createElement('svg');arr.setAttribute('width','11');arr.setAttribute('height','7');arr.setAttribute('viewBox','0 0 11 7');arr.setAttribute('fill','none');
+    arr.innerHTML='<path d="M1 1l4.5 4.5L10 1" stroke="#B8892A" stroke-width="1.4" stroke-linecap="round"/>';
+    arr.style.flexShrink='0';arr.style.opacity='0.5';
+    t.appendChild(arr);
+  });
+}
+/* ── DOB picker ── */
+function _suDobSync(){
+  const d=(document.getElementById('suDobD')||{value:''}).value;
+  const m=(document.getElementById('suDobM')||{value:''}).value;
+  const y=(document.getElementById('suDobY')||{value:''}).value;
+  const sel=document.getElementById('s_dob');
+  if(d&&m&&y&&sel){
+    sel.value=y+'-'+String(m).padStart(2,'0')+'-'+String(d).padStart(2,'0');
+    _dobAgeHint(sel.value);
+  }
+}
+function openSuDobMonth(){
+  const ms=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const sel=document.getElementById('suDobM');
+  const cur=sel.value;
+  const ov=document.createElement('div');ov.className='su-drop-ov';ov.id='suDropOv_suDobM';
+  ov.innerHTML=`<div class="su-drop-sheet">
+    <div class="su-drop-handle"></div>
+    <div class="su-drop-title">Month of Birth</div>
+    <div class="su-drop-list" id="suDL_suDobM">
+      ${ms.map((n,i)=>`<div class="su-drop-item${cur==String(i+1)?' active':''}"
+        onclick="pickSuDobMonth(${i+1},'${n}',this)">${n}</div>`).join('')}
+    </div></div>`;
+  ov.onclick=e=>{if(e.target===ov)closeSuDrop('suDobM');};
+  document.body.appendChild(ov);
+  requestAnimationFrame(()=>ov.classList.add('open'));
+}
+function pickSuDobMonth(num,name,el){
+  document.getElementById('suDobM').value=num;
+  const btn=document.getElementById('suDobMBtn');
+  if(btn){btn.textContent=name;btn.classList.add('has-val');}
+  el.closest('.su-drop-sheet').parentElement.querySelectorAll('.su-drop-item').forEach(i=>i.classList.remove('active'));
+  el.classList.add('active');
+  closeSuDrop('suDobM');
+  _suDobSync();
+}
+/* ── Height pill select ── */
+function _suHtPick(val,el){
+  document.getElementById('s_ht').value=val;
+  document.querySelectorAll('.su-ht-pill').forEach(p=>p.classList.remove('sel'));
+  el.classList.add('sel');
+}
+/* ── Big diet pill ── */
+function suDPill(val,el){
+  document.getElementById('s_diet').value=val;
+  document.querySelectorAll('.su-dpill').forEach(p=>p.classList.remove('sel'));
+  el.classList.add('sel');
+  setTimeout(()=>{
+    document.getElementById('suDietAbout').style.opacity='1';
+    document.getElementById('suDietAbout').style.transform='translateY(0)';
+  },220);
+}
+/* ── Validation before advancing ── */
+function _suGo(toId,checks){
+  for(const c of (checks||[])){
+    const el=document.getElementById(c.id);
+    if(!el)continue;
+    const bad=c.type==='checked'?!el.checked:!el.value.trim();
+    if(bad){
+      toast(c.msg||'Please complete this field.');
+      el.classList.add('invalid');
+      setTimeout(()=>el.classList.remove('invalid'),1500);
+      return;
+    }
+  }
+  _suScreen(toId);
 }
 function _suGender(g){
   const gM=document.getElementById('gMale');if(gM)gM.checked=(g==='Male');
