@@ -844,178 +844,51 @@ body{font-size:18px;}
 
 
 /* ═══════════════════════════════════════════════
-   PREMIUM POLISH — heritage stationery system
-   Hairline gold frames, near-square corners, crimson for actions only,
-   no spinning borders. The crisp hero photograph is the one bold element.
+   HERO — sharp photo at true aspect, invitation-style wordmark
+   (scoped to the hero only; the rest of the site keeps its original styling)
 ═══════════════════════════════════════════════ */
-:root{--oxblood:#2A0A0F;--hair:rgba(184,137,42,0.38);--radius:3px;--ease-lux:cubic-bezier(.22,1,.36,1);}
-body{font-feature-settings:"onum" 1,"kern" 1;}
-.stat-n,.mem-price,.ci-val,.bdet-val{font-feature-settings:"lnum" 1;}
-.sec-title,.hero-h1,.cta-band-h,.at-h{text-wrap:balance;}
-
-/* ── HERO: sharp photo, no stretching ── */
 .hero-photo{
   top:0 !important;bottom:0 !important;left:0 !important;right:0 !important;
   background-image:url('Assets/Temple-hero.webp');
   background-size:cover;background-position:50% 58%;
   filter:contrast(1.06) saturate(1.08);
-  animation:heroSettle 2.4s var(--ease-lux) both;
+  animation:heroSettle 2.4s cubic-bezier(.22,1,.36,1) both;
 }
 @keyframes heroSettle{from{transform:scale(1.045);}to{transform:scale(1);}}
 .hero-section::before{
   background:
-    radial-gradient(ellipse 58% 52% at 50% 50%,rgba(26,8,6,0.46) 0%,rgba(26,8,6,0.18) 60%,transparent 80%),
-    linear-gradient(to bottom,rgba(26,8,6,0.50) 0%,rgba(26,8,6,0.06) 26%,rgba(26,8,6,0.06) 64%,rgba(26,8,6,0.58) 100%) !important;
+    radial-gradient(ellipse 56% 50% at 50% 50%,rgba(26,8,6,0.44) 0%,rgba(26,8,6,0.16) 62%,transparent 82%),
+    linear-gradient(to bottom,rgba(26,8,6,0.22) 0%,transparent 22%,transparent 62%,rgba(26,8,6,0.55) 100%) !important;
 }
 .hero-tag{color:#F3E2B3 !important;font-weight:500;font-size:0.68rem;letter-spacing:0.34em;text-shadow:0 1px 3px rgba(0,0,0,0.7) !important;}
 .hero-tag::before,.hero-tag::after{background:rgba(243,226,179,0.7) !important;width:40px;}
 .hero-brand{font-weight:500;font-size:clamp(2.4rem,5vw,4rem);letter-spacing:0.1em;line-height:1.05;margin-bottom:1.3rem;
   text-shadow:0 2px 28px rgba(0,0,0,0.45),0 1px 2px rgba(0,0,0,0.35);}
 .hb-sub{display:block;font-size:0.36em;font-weight:500;letter-spacing:0.62em;margin-top:0.9em;padding-left:0.62em;color:#F3E2B3;}
-.hero-h1{font-weight:400;color:#FFF8E7;}
+.hero-h1{font-weight:400;color:#FFF8E7;text-wrap:balance;}
 .hero-h1::before{content:'';display:block;width:56px;height:1px;background:#D4AF37;margin:0 auto 1.1rem;}
 .hero-h2{color:rgba(255,248,231,0.86);}
-/* quiet CTA: no spinning ring */
-.hero-cta-wrap,.cta-band-btn-wrap{animation:none !important;background:none !important;box-shadow:none !important;padding:0 !important;}
-.hbtn,.btn-prim,.cta-band-btn{border-radius:var(--radius) !important;letter-spacing:0.26em !important;transition:background .25s var(--ease-lux),color .25s,border-color .25s,transform .25s var(--ease-lux) !important;}
-.hbtn::before,.hbtn::after,.btn-prim::before,.btn-prim::after,.cta-band-btn::before,.cta-band-btn::after{display:none !important;}
-.hbtn.primary{background:var(--primary) !important;box-shadow:0 0 0 1px rgba(212,175,55,0.55),0 0 0 5px rgba(123,31,46,0.25),0 14px 34px -12px rgba(0,0,0,0.55) !important;padding:1.05rem 2.8rem;}
-.hbtn.primary:hover{background:var(--primary-hover) !important;transform:translateY(-1px);}
-.btn-prim{box-shadow:none !important;}
-.btn-prim:hover{background:var(--primary-hover) !important;}
-.cta-band-btn{background:transparent !important;color:#F3E2B3 !important;border:1px solid rgba(212,175,55,0.7) !important;}
-.cta-band-btn:hover{background:#F3E2B3 !important;color:var(--primary) !important;}
+.hero-section .hero-cta-wrap{animation:none !important;background:none !important;box-shadow:none !important;padding:0 !important;}
+.hero-section .hbtn{border-radius:3px !important;letter-spacing:0.26em !important;}
+.hero-section .hbtn::before,.hero-section .hbtn::after{display:none !important;}
+.hero-section .hbtn.primary{background:var(--primary) !important;box-shadow:0 0 0 1px rgba(212,175,55,0.55),0 0 0 5px rgba(123,31,46,0.25),0 14px 34px -12px rgba(0,0,0,0.55) !important;padding:1.05rem 2.8rem;}
+.hero-section .hbtn.primary:hover{background:var(--primary-hover) !important;transform:translateY(-1px);}
 .hero-trust-row{gap:0;margin-top:2rem;}
 .htrust-pill{background:none !important;backdrop-filter:none !important;border:none !important;border-radius:0;padding:0 1.1rem;font-size:0.64rem;letter-spacing:0.2em;color:rgba(255,248,231,0.9);text-shadow:0 1px 3px rgba(0,0,0,0.6);}
 .htrust-pill + .htrust-pill{border-left:1px solid rgba(243,226,179,0.4) !important;}
 
-/* ── STATS ── */
-.stats-bar{background:var(--bg);padding:2.6rem 1rem;}
-.stat-item{padding:0.4rem 2.6rem;}
-.stat-item:not(:last-child)::after{content:'' !important;width:1px;height:44px;background:var(--border);opacity:1;right:0;font-size:0;}
-.stat-n{font-family:'Cormorant Garamond',serif !important;font-weight:500 !important;font-size:clamp(2.3rem,4vw,3rem) !important;letter-spacing:-0.01em;}
-.stat-l{font-size:0.66rem !important;letter-spacing:0.22em !important;margin-top:0.5rem;}
-
-/* ── SECTION HEADERS ── */
-.sec-hd{padding:5.5rem 2rem 3rem;}
-#pgHome .orn-divider{display:none;}
-.sec-tag{font-size:0.64rem !important;letter-spacing:0.32em !important;font-weight:500;color:var(--gold) !important;}
-.sec-tag::before,.sec-tag::after{width:24px;background:var(--gold) !important;}
-.sec-title{font-size:clamp(2rem,3.4vw,2.8rem);font-weight:500;line-height:1.15;margin-top:0.5rem;}
-.sec-sub{max-width:540px;margin:0.8rem auto 0;line-height:1.6;}
-
-/* ── FEATURE CARDS: framed stationery ── */
-.feat-outer{background:none !important;animation:none !important;padding:0 !important;box-shadow:none !important;border-radius:var(--radius);}
-.feat-card{background:#FFFDF9 !important;backdrop-filter:none !important;border:1px solid var(--hair);border-radius:var(--radius) !important;
-  box-shadow:0 1px 0 #fff inset,0 18px 40px -28px rgba(123,31,46,0.35) !important;padding:2.4rem 2rem !important;position:relative;
-  transition:transform .35s var(--ease-lux),box-shadow .35s var(--ease-lux) !important;}
-.feat-card::after{content:'';position:absolute;inset:6px;border:1px solid rgba(184,137,42,0.14);pointer-events:none;}
-.feat-card:hover{transform:translateY(-3px) !important;box-shadow:0 1px 0 #fff inset,0 26px 50px -28px rgba(123,31,46,0.45) !important;}
-.feat-icon{background:none !important;border:1px solid var(--hair) !important;}
-.feat-title{letter-spacing:0.06em;}
-
-/* ── CTA BAND ── */
-.cta-band{background:var(--primary);}
-.cta-band::after{content:'';position:absolute;inset:18px;border:1px solid rgba(212,175,55,0.28);pointer-events:none;}
-
-/* ── INNER PAGE BANNERS ── */
-.signup-hero{background-image:url('Assets/Temple-hero.webp') !important;background-position:50% 55% !important;height:clamp(200px,30vh,300px);}
-.sh-title{font-weight:500;letter-spacing:0.14em;}
-.sh-bc{color:rgba(243,226,179,0.85);letter-spacing:0.24em;margin-top:0.6rem;}
-
-/* ── MEMBERSHIP ── */
-.shine-wrap{padding:0 !important;overflow:visible !important;border-radius:var(--radius) !important;}
-.shine-wrap::before{display:none !important;}
-.shine-wrap.featured{transform:none;}
-.mem-cards{align-items:stretch;gap:2rem;max-width:980px;}
-.mem-card{height:100%;display:flex;flex-direction:column;background:#FFFDF9 !important;border:1px solid var(--hair) !important;border-radius:var(--radius) !important;box-shadow:0 18px 40px -30px rgba(123,31,46,0.35);}
-.shine-wrap.featured .mem-card{border:1px solid var(--gold) !important;outline:1px solid rgba(184,137,42,0.4);outline-offset:6px;box-shadow:0 34px 60px -34px rgba(123,31,46,0.5) !important;}
-.mem-card .btn-prim{margin-top:auto;background:transparent !important;color:var(--primary) !important;border:1px solid var(--primary) !important;}
-.shine-wrap.featured .mem-card .btn-prim,.mem-card .btn-prim:hover{background:var(--primary) !important;color:#fff !important;}
-.mem-icon{font-family:'Cinzel',serif;font-size:0.72rem;letter-spacing:0.3em;color:var(--gold);width:44px;height:44px;margin:0 auto 1.2rem;display:flex;align-items:center;justify-content:center;border:1px solid var(--hair);border-radius:50%;padding-left:0.3em;}
-.mem-tier{font-weight:600;letter-spacing:0.24em;font-size:0.9rem;}
-.mem-price{font-weight:500;font-size:2.8rem;color:var(--primary);letter-spacing:-0.01em;}
-.mem-feats{line-height:1.95;}
-.mem-check{color:var(--gold);font-weight:400;}
-
-/* ── CONTACT ── */
-.ci-card{background:#FFFDF9 !important;backdrop-filter:none !important;border:1px solid var(--hair) !important;border-radius:var(--radius) !important;padding:1.8rem 1.4rem !important;text-decoration:none;transition:border-color .25s,transform .3s var(--ease-lux);}
-a.ci-card:hover,.ci-card[onclick]:hover{border-color:var(--gold) !important;transform:translateY(-2px);}
-.ci-icon{width:48px;height:48px;border:1px solid var(--hair);border-radius:50%;display:flex !important;align-items:center;justify-content:center;color:var(--primary);margin-bottom:0.9rem !important;}
-.ci-val{font-family:'EB Garamond',serif;font-size:1.02rem;line-height:1.55;}
-.ci-ig{grid-column:1/-1;}
-.stories-ig-btn{display:inline-flex !important;width:auto !important;margin-top:1.8rem;padding:0.95rem 2.2rem;text-decoration:none;}
-
-/* ── FOOTER (global) ── */
-.site-footer{background:#FFFDF9;border-top:1px solid var(--hair);padding:4rem 4rem 0;position:relative;z-index:1;}
-.footer-grid{max-width:1100px;margin:0 auto 3rem;grid-template-columns:1.4fr 1fr;gap:4rem;}
-.fg-brand .fb-name{font-family:'Cinzel',serif;font-style:normal;font-weight:500;font-size:1.05rem;letter-spacing:0.12em;}
-.fg-brand p{font-size:1rem;max-width:44ch;}
-.fg-col h4{letter-spacing:0.28em;font-weight:500;color:var(--gold);}
-.fg-col button,.fg-col a{font-size:0.98rem;text-align:left;padding:0;}
-.fg-col button:hover,.fg-col a:hover{color:var(--primary);}
-.footer-bottom{background:transparent;border-top:1px solid var(--border-light);flex-direction:column;gap:0.35rem;text-align:center;padding:1.5rem 1rem 1.8rem;max-width:1100px;margin:0 auto;}
-.footer-bottom p{font-family:'Josefin Sans',sans-serif;font-style:normal;font-size:0.66rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);}
-
-/* ── FLOATING SOCIAL: on-brand, calm ── */
-.sf-btn.sf-wa,.sf-btn.sf-ig{animation:none !important;background:var(--primary) !important;border:1px solid rgba(212,175,55,0.6);box-shadow:0 10px 24px -8px rgba(123,31,46,0.55) !important;}
-.sf-item:hover .sf-btn{background:var(--primary-hover) !important;filter:none;}
-.sf-inline-label{background:#FFFDF9 !important;color:var(--primary) !important;border:1px solid var(--hair);box-shadow:0 8px 20px -10px rgba(0,0,0,0.3) !important;font-family:'Josefin Sans',sans-serif !important;letter-spacing:0.08em;border-radius:var(--radius) !important;}
-
-/* ── DOODLE: whisper, not wallpaper ── */
-.doodle-bg::before{opacity:0.03 !important;}
-
-@media(max-width:900px){
-  .footer-grid{grid-template-columns:1fr;gap:2.2rem;}
-  .site-footer{padding:3rem 1.4rem 0;}
-}
 @media(max-width:768px){
-  .hero-photo{background-image:url('Assets/Temple-hero-mobile.webp');background-position:50% 62%;}
+  .hero-photo{background-position:24% 60% !important;}
   .hero-section{height:calc(88svh + 1px) !important;min-height:520px !important;}
   .hero-brand{font-size:clamp(2rem,9vw,2.7rem) !important;letter-spacing:0.06em !important;}
   .hb-sub{letter-spacing:0.42em;padding-left:0.42em;font-size:0.4em;}
-  .hero-tag{font-size:0.58rem !important;letter-spacing:0.24em !important;}
-  .hero-tag::before,.hero-tag::after{width:18px !important;}
-  .htrust-pill{padding:0 0.6rem;font-size:0.56rem;letter-spacing:0.12em;}
-  .htrust-pill svg{display:none;}
-  .signup-hero{background-image:url('Assets/Temple-hero-mobile.webp') !important;height:190px !important;}
-  .signup-hero::before{background:linear-gradient(to bottom,rgba(26,8,6,0.40),rgba(26,8,6,0.62)) !important;}
-  .sh-title{font-size:1.6rem !important;}
-  .stats-bar{display:grid !important;grid-template-columns:repeat(2,1fr);gap:1.8rem 0 !important;padding:2.2rem 1rem !important;}
-  .stat-item{padding:0 0.5rem !important;}
-  .stat-item:last-child{grid-column:1/-1;}
-  .stat-item::after{display:none !important;}
-  .sec-hd{padding:3.6rem 1.2rem 2rem;}
-  .feat-grid{grid-template-columns:1fr 1fr !important;gap:0.8rem !important;padding:0 1rem !important;}
-  .feat-card{padding:1.5rem 1rem !important;}
-  .feat-text{font-size:15px !important;line-height:1.6 !important;}
-  .feat-title{font-size:0.8rem !important;}
-  .feat-icon{width:44px !important;height:44px !important;}
-  .ci-ig{grid-column:auto;}
-  .sf-inline-label{display:none !important;}
-}
-@media(max-width:380px){.feat-grid{grid-template-columns:1fr !important;}}
-@media(prefers-reduced-motion:reduce){.hero-photo{animation:none;}}
-
-/* ── polish pass 2 ── */
-.mem-note{font-family:'EB Garamond',serif;font-size:0.92rem;font-style:italic;color:var(--muted);border-top:1px dashed var(--border);padding:0.9rem 0 1.4rem;margin-top:-0.4rem;text-align:left;}
-.mem-note strong{font-style:normal;font-weight:500;color:var(--primary);}
-.fg-col ul{columns:2;column-gap:2.4rem;}
-.fg-col li{break-inside:avoid;}
-.hero-section::before{
-  background:
-    radial-gradient(ellipse 56% 50% at 50% 50%,rgba(26,8,6,0.44) 0%,rgba(26,8,6,0.16) 62%,transparent 82%),
-    linear-gradient(to bottom,rgba(26,8,6,0.22) 0%,transparent 22%,transparent 62%,rgba(26,8,6,0.55) 100%) !important;
-}
-@media(max-width:768px){
-  .hero-photo{background-image:url('Assets/Temple-hero.webp') !important;background-position:24% 60% !important;}
+  .hero-tag{font-size:0.58rem !important;letter-spacing:0.2em !important;white-space:nowrap;}
   .hero-tag::before,.hero-tag::after{display:none !important;}
-  .hero-tag{letter-spacing:0.2em !important;white-space:nowrap;}
   .hero-trust-row{flex-wrap:nowrap !important;}
   .htrust-pill{padding:0 0.5rem !important;font-size:0.52rem !important;letter-spacing:0.1em !important;white-space:nowrap;}
-  .signup-hero{background-image:url('Assets/Temple-hero.webp') !important;background-position:24% 55% !important;}
-  .fg-col ul{columns:1;}
+  .htrust-pill svg{display:none;}
 }
+@media(prefers-reduced-motion:reduce){.hero-photo{animation:none;}}
 </style>
 </head>
 <body>
@@ -1227,9 +1100,9 @@ checkCookieConsent();
   <div class="signup-hero" id="memHero"><div class="sh-text"><div class="sh-title">Membership Plans</div><div class="sh-bc">Home | Membership</div></div></div>
   <div class="sec-hd"><div class="sec-tag">Choose Your Plan</div><div class="sec-title">Invest in Your Future</div><div class="sec-sub">Select the membership that reflects your aspirations</div></div>
   <div class="mem-cards">
-    <div class="shine-wrap"><div class="mem-card"><div class="mem-icon">I</div><div class="mem-tier">VIP</div><div class="mem-price">₹15,000</div><div class="mem-period">per year</div><div class="mem-feats"><span class="mem-check">✓</span> Full profile visibility<br><span class="mem-check">✓</span> Browse verified profiles<br><span class="mem-check">✓</span> Express interest<br><span class="mem-check">✓</span> Bureau matchmaking</div><div class="mem-note">Post-engagement fee: <strong>₹1,50,000</strong> per person</div><button class="btn-prim" onclick="showPage('pgContact');setNL('nlContact')" aria-label="Enquire about VIP">Enquire</button></div></div>
-    <div class="shine-wrap featured"><div class="mem-card"><div class="mem-icon">II</div><div class="mem-tier">ELITE</div><div class="mem-price">₹1,00,000</div><div class="mem-period">per year</div><div class="mem-feats"><span class="mem-check">✓</span> All VIP benefits<br><span class="mem-check">✓</span> Priority search results<br><span class="mem-check">✓</span> Dedicated manager<br><span class="mem-check">✓</span> NRI profile access</div><div class="mem-note">Post-engagement fee: <strong>₹3,00,000</strong> per person</div><button class="btn-prim" style="background:linear-gradient(135deg,var(--gold),var(--primary));color:#fff;" onclick="showPage('pgContact');setNL('nlContact')" aria-label="Enquire about Elite">Enquire</button></div></div>
-    <div class="shine-wrap"><div class="mem-card"><div class="mem-icon">III</div><div class="mem-tier">VVIP</div><div class="mem-price">₹30,000</div><div class="mem-period">per year</div><div class="mem-feats"><span class="mem-check">✓</span> All Elite benefits<br><span class="mem-check">✓</span> White-glove service<br><span class="mem-check">✓</span> Background verification<br><span class="mem-check">✓</span> Assisted shortlisting</div><div class="mem-note">Post-engagement fee: <strong>₹10,00,000</strong> per person</div><button class="btn-prim" onclick="showPage('pgContact');setNL('nlContact')" aria-label="Enquire about VVIP">Enquire</button></div></div>
+    <div class="shine-wrap"><div class="mem-card"><div class="mem-icon">👑</div><div class="mem-tier">VIP</div><div class="mem-price">₹15,000</div><div class="mem-period">per year</div><div class="mem-feats"><span class="mem-check">✓</span> Full profile visibility<br><span class="mem-check">✓</span> Browse verified profiles<br><span class="mem-check">✓</span> Express interest<br><span class="mem-check">✓</span> Bureau matchmaking<br><span class="mem-check">✓</span> Post-engagement: ₹1,50,000/person</div><button class="btn-prim" onclick="showPage('pgContact');setNL('nlContact')" aria-label="Enquire about VIP">Enquire</button></div></div>
+    <div class="shine-wrap featured"><div class="mem-card"><div class="mem-icon">🔱</div><div class="mem-tier">ELITE</div><div class="mem-price">₹1,00,000</div><div class="mem-period">per year</div><div class="mem-feats"><span class="mem-check">✓</span> All VIP benefits<br><span class="mem-check">✓</span> Priority search results<br><span class="mem-check">✓</span> Dedicated manager<br><span class="mem-check">✓</span> NRI profile access<br><span class="mem-check">✓</span> Post-engagement: ₹3,00,000/person</div><button class="btn-prim" style="background:linear-gradient(135deg,var(--gold),var(--primary));color:#fff;" onclick="showPage('pgContact');setNL('nlContact')" aria-label="Enquire about Elite">Enquire</button></div></div>
+    <div class="shine-wrap"><div class="mem-card"><div class="mem-icon">💎</div><div class="mem-tier">VVIP</div><div class="mem-price">₹30,000</div><div class="mem-period">per year</div><div class="mem-feats"><span class="mem-check">✓</span> All Elite benefits<br><span class="mem-check">✓</span> White-glove service<br><span class="mem-check">✓</span> Background verification<br><span class="mem-check">✓</span> Assisted shortlisting<br><span class="mem-check">✓</span> Post-engagement: ₹10,00,000/person</div><button class="btn-prim" onclick="showPage('pgContact');setNL('nlContact')" aria-label="Enquire about VVIP">Enquire</button></div></div>
   </div>
 </div>
 
@@ -1238,7 +1111,7 @@ checkCookieConsent();
 ══════════════════════════════════════ -->
 <div id="pgStories" class="page doodle-bg" style="display:none;">
   <div class="signup-hero" id="storiesHero"><div class="sh-text"><div class="sh-title">Happy Stories</div><div class="sh-bc">Home | Happy Stories</div></div></div>
-  <div class="sec-hd"><div class="sec-tag">Real Couples</div><div class="sec-title">Thousands of Blessed Unions</div><div class="sec-sub">Weddings, engagements and family moments from couples we have matched are shared on our Instagram.</div><a class="btn-prim stories-ig-btn" href="https://www.instagram.com/naveenreddymarriage/" target="_blank" rel="noopener">See them on Instagram</a></div>
+  <div class="sec-hd"><div class="sec-tag">Real Couples</div><div class="sec-title">Thousands of Blessed Unions</div><div class="sec-sub">Weddings, engagements and family moments from couples we have matched are shared on our Instagram.</div><a class="btn-prim" style="display:inline-flex;align-items:center;justify-content:center;width:auto;padding:0.85rem 1.8rem;text-decoration:none;margin-top:1.6rem;" href="https://www.instagram.com/naveenreddymarriagebureau/" target="_blank" rel="noopener">See them on Instagram</a></div>
   <!-- Share Your Story -->
   <div style="max-width:620px;margin:0 auto;padding:0 2rem 5rem;position:relative;z-index:1;">
     <div class="sec-hd" style="padding:1rem 0 1.5rem;"><div class="sec-tag">Share Your Joy</div><div class="sec-title">Got Married Through NRMB?</div><div class="sec-sub">We'd be honoured to feature your love story.</div></div>
@@ -1255,26 +1128,26 @@ checkCookieConsent();
   <div class="contact-wrap">
     <div class="contact-grid">
       <div class="ci-card" onclick="window.open('https://maps.app.goo.gl/GBsdFySAJ2pNANFw9?g_st=iw','_blank')" style="cursor:pointer;">
-        <span class="ci-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><div class="ci-lbl">Head Office</div>
+        <span class="ci-icon">📍</span><div class="ci-lbl">Head Office</div>
         <div class="ci-val">G-6 Amruthaville, Opp. Yashoda Hospital,<br>Somajiguda, Hyderabad — 500 082</div>
         <div style="font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.1em;color:var(--gold2);margin-top:0.5rem;text-transform:uppercase;">Tap to open maps →</div>
       </div>
       <div class="ci-card">
-        <span class="ci-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h3.5l1.8 4.5-2.3 1.4a11 11 0 0 0 6.1 6.1l1.4-2.3L20 15.5V19a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z"/></svg></span><div class="ci-lbl">Phone &amp; Mobile</div>
+        <span class="ci-icon">📞</span><div class="ci-lbl">Phone &amp; Mobile</div>
         <div class="ci-val"><a href="tel:+917207999985" style="color:inherit;text-decoration:none;display:block;">+91 72079 99985</a><a href="tel:+919848221166" style="color:inherit;text-decoration:none;display:block;margin-top:0.2rem;">+91 98482 21166</a><a href="https://wa.me/919848221166" target="_blank" rel="noopener" style="color:var(--crimson);text-decoration:none;display:block;margin-top:0.2rem;">WhatsApp: +91 98482 21166</a></div>
       </div>
       <div class="ci-card" onclick="window.location.href='mailto:naveenreddy0033@yahoo.com'" style="cursor:pointer;">
-        <span class="ci-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3.5 6l8.5 7 8.5-7"/></svg></span><div class="ci-lbl">Email</div>
+        <span class="ci-icon">✉</span><div class="ci-lbl">Email</div>
         <div class="ci-val">naveenreddy0033@yahoo.com</div>
       </div>
       <div class="ci-card" onclick="showPage('pgBranches')" style="cursor:pointer;">
-        <span class="ci-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg></span>
+        <span class="ci-icon">🗺</span>
         <div class="ci-lbl">All Branch Offices</div>
         <div class="ci-val" style="color:var(--crimson);font-weight:500;">Somajiguda · Kothapet<br>Warangal · Karimnagar<br><span style="font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold2);">Tap to view maps →</span></div>
       </div>
-      <div class="ci-card"><span class="ci-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div class="ci-lbl">Working Hours</div><div class="ci-val">Mon–Sun: 10:00 AM – 6:30 PM<br><em style="color:var(--gold2);">Tuesday: Weekly Off</em></div></div>
-      <div class="ci-card"><span class="ci-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></span><div class="ci-lbl">Head of Bureau</div><div class="ci-val">Mr. Naveen Reddy Ravula</div></div>
-      <a class="ci-card ci-ig" href="https://www.instagram.com/naveenreddymarriage/" target="_blank" rel="noopener"><span class="ci-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg></span><div class="ci-lbl">Instagram</div><div class="ci-val">@naveenreddymarriage</div></a>
+      <div class="ci-card"><span class="ci-icon">🕐</span><div class="ci-lbl">Working Hours</div><div class="ci-val">Mon–Sun: 10:00 AM – 6:30 PM<br><em style="color:var(--gold2);">Tuesday: Weekly Off</em></div></div>
+      <div class="ci-card"><span class="ci-icon">👤</span><div class="ci-lbl">Head of Bureau</div><div class="ci-val">Mr. Naveen Reddy Ravula</div></div>
+      <a class="ci-card" href="https://www.instagram.com/naveenreddymarriagebureau/" target="_blank" rel="noopener" style="grid-column:1/-1;text-decoration:none;color:inherit;"><span class="ci-icon">📸</span><div class="ci-lbl">Instagram</div><div class="ci-val">@naveenreddymarriagebureau</div></a>
     </div>
   </div>
 </div>
@@ -1441,7 +1314,7 @@ checkCookieConsent();
       <p>Serving the Reddy community with trust, honour and dedication since 2000. Making happy marriages happen throughout Telangana and beyond.</p>
     </div>
     
-    <div class="fg-col"><h4>Contact</h4><ul><li><a href="mailto:naveenreddy0033@yahoo.com">naveenreddy0033@yahoo.com</a></li><li><a href="tel:+917207999985">+91 72079 99985</a></li><li><a href="tel:+919848221166">+91 98482 21166</a></li><li><button onclick="showPage('pgBranches')" aria-label="Our Branch Offices">Our Branch Offices</button></li><li><a href="https://www.instagram.com/naveenreddymarriage/" target="_blank" rel="noopener">Instagram · @naveenreddymarriage</a></li><li><a href="/support">Support</a></li><li><a href="/privacy-policy">Privacy Policy</a></li><li><a href="/terms">Terms &amp; Conditions</a></li><li><a href="/account-deletion">Account Deletion</a></li></ul></div>
+    <div class="fg-col"><h4>Contact</h4><ul><li><a href="mailto:naveenreddy0033@yahoo.com">naveenreddy0033@yahoo.com</a></li><li><a href="tel:+917207999985">+91 72079 99985</a></li><li><a href="tel:+919848221166">+91 98482 21166</a></li><li><button onclick="showPage('pgBranches')" aria-label="Our Branch Offices">Our Branch Offices</button></li><li><a href="https://www.instagram.com/naveenreddymarriagebureau/" target="_blank" rel="noopener">Instagram · @naveenreddymarriagebureau</a></li><li><a href="/support">Support</a></li><li><a href="/privacy-policy">Privacy Policy</a></li><li><a href="/terms">Terms &amp; Conditions</a></li><li><a href="/account-deletion">Account Deletion</a></li></ul></div>
   </div>
   <div class="footer-bottom">
     <p>© 2026 Naveen Reddy Marriage Bureau. All rights reserved. · Exclusively for Reddy Community · Hindu Religion.</p>
@@ -1697,7 +1570,7 @@ function _confirmOpen(title, subtitle, url){
 <!-- Social float stack — Instagram + WhatsApp -->
 <div class="social-stack" id="socialStack">
 
-  <a class="sf-item" href="https://www.instagram.com/naveenreddymarriage/" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
+  <a class="sf-item" href="https://www.instagram.com/naveenreddymarriagebureau/" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
     <span class="sf-inline-label" id="sfIgLabel">Follow our journey</span>
     <div class="sf-btn sf-ig">
       <lottie-player src="https://cdn.prod.website-files.com/5d829bf092d4644f5c42e0ea/5e789e6aac14dc7e6943e1df_instagram.json"
