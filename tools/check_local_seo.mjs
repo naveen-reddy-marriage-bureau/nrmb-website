@@ -80,13 +80,19 @@ try {
   assert.equal(verification.trim(),'google-site-verification: googlee1584360cfe843d2.html');
   if(!local) {
     await page.setJavaScriptEnabled(true);
+    await page.setViewport({width:1280,height:900});
     await page.goto(base+'/',{waitUntil:'networkidle2'});
+    await page.waitForFunction(()=>!document.querySelector('#splashScreen')||getComputedStyle(document.querySelector('#splashScreen')).pointerEvents==='none');
     await Promise.all([page.waitForNavigation({waitUntil:'networkidle2'}),page.click('#nlBranch')]);
     assert.equal(page.url(),base+'/our-branches','homepage branch navigation');
     await Promise.all([page.waitForNavigation({waitUntil:'networkidle2'}),page.click('h2 a[href="/branches/somajiguda"]')]);
     assert.equal(page.url(),base+'/branches/somajiguda','hub to branch navigation');
     await Promise.all([page.waitForNavigation({waitUntil:'networkidle2'}),page.click('header a[href="/#pgContact"]')]);
     assert.equal(await page.$eval('#pgContact',el=>getComputedStyle(el).display),'block','legacy contact hash works');
+    await page.setViewport({width:390,height:844});
+    await page.click('#mobMenuBtn');
+    await Promise.all([page.waitForNavigation({waitUntil:'networkidle2'}),page.click('.mob-nav-link[href="/our-branches"]')]);
+    assert.equal(page.url(),base+'/our-branches','mobile branch navigation');
   }
   console.log(JSON.stringify({result:'PASS',base,pages:summaries,sitemapUrls:sitemapUrls.length,verification:'preserved'},null,2));
 } finally { await browser.close(); }
