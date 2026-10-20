@@ -16,16 +16,16 @@ NAME = "Naveen Reddy Marriage Bureau"
 ORG_ID = ORIGIN + "/#organization"
 KEYS = {"hyd": "somajiguda", "ktp": "kothapet", "wgl": "warangal", "krm": "karimnagar"}
 LOCALITIES = {
-    "hyd": ("Somajiguda, Hyderabad", "Hyderabad", "500082"),
-    "ktp": ("Kothapet, Hyderabad", "Hyderabad", None),
-    "wgl": ("Warangal / Hanamkonda", "Hanamkonda", None),
-    "krm": ("Karimnagar", "Karimnagar", None),
+    "hyd": ("Somajiguda, Hyderabad", "Hyderabad"),
+    "ktp": ("Kothapet, Hyderabad", "Hyderabad"),
+    "wgl": ("Warangal / Hanamkonda", "Hanamkonda"),
+    "krm": ("Karimnagar", "Karimnagar"),
 }
 DETAILS = {
     "hyd": "Visit our corporate head office in Somajiguda, opposite Yashoda Hospital. Speak with the bureau team about Reddy matchmaking and the membership options available to your family.",
-    "ktp": "Our Kothapet branch serves families visiting the Dilsukhnagar area of Hyderabad. Find us at Flat No. 501 in PVT Market and call the branch before arranging your visit.",
-    "wgl": "Meet our team on Subedari Main Road in Hanamkonda for Reddy matrimony services in the Warangal area. The office landmark is the petrol pump; use our linked Google Maps listing for directions.",
-    "krm": "Visit our Karimnagar office near Kaman Chowrastha on Bus Stand Road. Contact the branch team to discuss assisted matchmaking for your family and arrange a convenient visit.",
+    "ktp": "Our Kothapet branch serves Reddy families in Hyderabad. Find us at Flat No. 501 on the fifth floor in Kothapet and call the branch before arranging your visit.",
+    "wgl": "Meet our team in Phase 1, Teachers Colony, Hanamkonda for Reddy matrimony services in the Warangal area. Use our linked Google Maps listing and the location code XGRP+HVR for directions.",
+    "krm": "Visit our Karimnagar office in Gajarla Complex, opposite Bank of India at Kaman Chowrasta. Contact the branch team to discuss assisted matchmaking for your family and arrange a convenient visit.",
 }
 DAYS = ["Monday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 DESCRIPTION = "Reddy matrimony and personal matchmaking since 2000. Visit Naveen Reddy Marriage Bureau in Somajiguda, Kothapet, Warangal or Karimnagar."
@@ -73,13 +73,14 @@ def organization(branches):
 
 
 def business(b):
-    area, locality, postcode = LOCALITIES[b["key"]]
+    area, locality = LOCALITIES[b["key"]]
+    postcode = re.search(r"\b(\d{3})\s?(\d{3})\b", b["address"])
     address = {
         "@type": "PostalAddress", "streetAddress": b["address"],
         "addressLocality": locality, "addressRegion": "Telangana", "addressCountry": "IN",
     }
     if postcode:
-        address["postalCode"] = postcode
+        address["postalCode"] = postcode[1] + postcode[2]
     return {
         "@type": "LocalBusiness", "@id": ORIGIN + b["path"] + "#business",
         "name": NAME, "url": ORIGIN + b["path"],

@@ -90,7 +90,9 @@ try {
     await Promise.all([page.waitForNavigation({waitUntil:'networkidle2'}),page.click('header a[href="/#pgContact"]')]);
     assert.equal(await page.$eval('#pgContact',el=>getComputedStyle(el).display),'block','legacy contact hash works');
     await page.setViewport({width:390,height:844});
+    await page.waitForFunction(()=>!document.querySelector('#splashScreen')||getComputedStyle(document.querySelector('#splashScreen')).pointerEvents==='none');
     await page.click('#mobMenuBtn');
+    await page.waitForFunction(()=>getComputedStyle(document.querySelector('#mobNavPanel')).opacity==='1');
     await Promise.all([page.waitForNavigation({waitUntil:'networkidle2'}),page.click('.mob-nav-link[href="/our-branches"]')]);
     assert.equal(page.url(),base+'/our-branches','mobile branch navigation');
   }
