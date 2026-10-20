@@ -1,0 +1,91 @@
+# Public website deploy allowlist (Vercel project: naveen-reddy-marriage-bureau)
+#
+# Everything is excluded by default. Only files that are intentionally public
+# are re-included at the bottom. To publish a new public page or image, add an
+# explicit "!/..." line in section 3 — never remove the "/*" or "/Assets/*" rules.
+#
+# Admin/ is a separate Vercel project and must never ship with this site.
+# Rules are evaluated top to bottom; later rules win.
+
+# 1. Deny everything at the root (files, folders, dotfiles)
+/*
+
+# 2. Open the Assets folder, but deny every file inside it by default
+!/Assets/
+/Assets/*
+
+# Defence in depth: never ship these, even if allowed later by mistake
+.*
+*.md
+*.map
+*.log
+*.bak
+*.backup
+*.old
+*.orig
+*.tmp
+*.swp
+*.zip
+*.tar
+*.gz
+*.7z
+*.rar
+*.sql
+*.db
+*.sqlite
+*.csv
+*.xls
+*.xlsx
+*.xlsm
+*.ods
+*.doc
+*.docx
+*.pdf
+*.json
+*.env
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.js
+*.mjs
+*.cjs
+*.ts
+*.tsx
+*.sh
+*.ps1
+*.html
+*seed*
+*dummy*
+*demo*
+*secret*
+*credential*
+*backup*
+
+# 3. Explicitly public files (must stay last so they win)
+# Images used by the public pages
+!/Assets/Logo-transparent.webp
+!/Assets/Temple.png
+!/Assets/Temple-hero.webp
+!/Assets/Temple-hero-mobile.webp
+!/Assets/Doodle.webp
+# Pages
+!/index.html
+!/privacy-policy.html
+!/terms.html
+!/support.html
+!/account-deletion.html
+# Google site ownership verification - keep permanently
+!/googlee1584360cfe843d2.html
+!/robots.txt
+!/sitemap.xml
+!/our-branches.html
+!/branches/
+/branches/*
+!/branches/somajiguda.html
+!/branches/kothapet.html
+!/branches/warangal.html
+!/branches/karimnagar.html
+# Read by Vercel for routing; Vercel does not serve vercel.json publicly
+!/vercel.json

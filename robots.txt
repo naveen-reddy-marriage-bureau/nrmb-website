@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /Admin/
+Disallow: /next-app/
+Disallow: /scripts/
+Disallow: /tools/
+Disallow: /docs/
+Disallow: /Config/
+Disallow: /.tmp/
+
+Sitemap: https://www.reddyelitematrimony.com/sitemap.xml
