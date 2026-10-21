@@ -76,8 +76,11 @@ try {
   const robots=await (await fetch(base+'/robots.txt')).text();
   assert.ok(robots.includes('Sitemap: '+origin+'/sitemap.xml'));
   assert.ok(!robots.includes('Disallow: /\n'));
-  const verification=await (await fetch(base+'/googlee1584360cfe843d2.html')).text();
-  assert.equal(verification.trim(),'google-site-verification: googlee1584360cfe843d2.html');
+  for(const name of ['googlee1584360cfe843d2.html','google1a736d462f272294.html']) {
+    const response=await fetch(base+'/'+name);
+    assert.equal(response.status,200,`${name}: permanent verification file`);
+    assert.equal((await response.text()).trim(),'google-site-verification: '+name);
+  }
   if(!local) {
     await page.setJavaScriptEnabled(true);
     await page.setViewport({width:1280,height:900});
@@ -96,5 +99,5 @@ try {
     await Promise.all([page.waitForNavigation({waitUntil:'networkidle2'}),page.click('.mob-nav-link[href="/our-branches"]')]);
     assert.equal(page.url(),base+'/our-branches','mobile branch navigation');
   }
-  console.log(JSON.stringify({result:'PASS',base,pages:summaries,sitemapUrls:sitemapUrls.length,verification:'preserved'},null,2));
+  console.log(JSON.stringify({result:'PASS',base,pages:summaries,sitemapUrls:sitemapUrls.length,verification:'both files preserved'},null,2));
 } finally { await browser.close(); }
