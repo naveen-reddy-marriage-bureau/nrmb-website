@@ -90,3 +90,8 @@
 !/branches/karimnagar.html
 # Read by Vercel for routing; Vercel does not serve vercel.json publicly
 !/vercel.json
+
+!/Assets/site-logo.jpg
+!/Assets/site-doodle.jpg
+!/Assets/Temple-opening-mobile.webp
+!/Assets/Temple-opening-desktop.webp
